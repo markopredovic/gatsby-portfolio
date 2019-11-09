@@ -1,0 +1,11 @@
+{
+    "Core": [
+        "HTML", "CSS", "Javascript", "PHP", "MySql", "linux", "git"
+    ],
+    "Library and frameworks": [
+        "React js", "Node js", "Redux", "PWA", "jQuery", "Gatsby js", "Requirejs", "GraphQL"
+    ],
+    "CMS and tools": [
+        "WordPress", "Magento", "Contentful", "Netlify", "Webpack", "Gulp", "Grunt"
+    ]
+}

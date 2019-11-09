@@ -1,0 +1,40 @@
+/* ---------------------------
+  modules common:
+-----------------------------*/
+
+/* hamburger-menu: */
+.m-hamburger-menu {
+  font-size: 3rem;
+  color: $black;
+}
+
+/* titles: */
+.title-section {
+  position: relative;
+  margin-bottom: $m-margin;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: $red-dark;
+  }
+}
+
+.m-testimonial {
+  padding: $s-padding 15px $m-padding;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1.6rem;
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  span { font-size: 1.4rem; font-weight: 700; color: $black;}
+}

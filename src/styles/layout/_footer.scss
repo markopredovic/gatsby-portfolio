@@ -1,0 +1,42 @@
+/* -------------------------------------
+    footer:
+-------------------------------------- */
+.l-footer {
+  padding: $m-padding 10px $s-padding;
+  background-color: $black;
+  color: #fff;
+
+  .l-footer-menu {
+    margin-bottom: $s-margin;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+
+      li {
+        &:after {
+          content: '|';
+          display: inline-block;
+          margin: 0 10px;
+        }
+
+        &:last-child {
+          &:after { display: none; }
+        }
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .l-footer-contact {
+    margin-bottom: $s-margin + 10px;
+
+    p { margin-bottom: 10px;}
+  }
+
+  .l-copyright {}
+}

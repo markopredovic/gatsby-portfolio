@@ -1,0 +1,98 @@
+/* ----------------------------
+    home:
+------------------------------ */
+
+/* banner: */
+.l-home-banner {
+  margin-bottom: $l-margin;
+}
+
+/* my skills: */
+.l-home-skills {
+  margin-bottom: $l-margin;
+
+  .title-section {
+      padding: 0 10px;
+
+      &:after { left: 10px;}
+  }
+
+  .l-accordion {
+    padding: 10px;
+    background-color: $red-darkest;
+    color: #fff;
+  }
+
+  .l-accordion-item {
+    margin-bottom: 20px;
+
+    h3 {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: 30px;
+        top: 0px;
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+
+      li { margin-bottom: 0; font-size: 1.8rem; line-height: 1.6; }
+    }
+  }
+}
+
+/* latest projects: */
+.l-latest-projects {
+  margin-bottom: $l-margin;
+
+  .title-section {
+    padding: 0 10px;
+
+    &:after { left: 10px;}
+  }
+
+  .l-portfolio-project {
+
+    .l-img {
+      img {
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .l-content {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+
+      h3 {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* testimonials: */
+.l-home-testimonials {
+
+  .carousel.carousel-slider .slide {
+  background-color: $red;
+  }
+
+  .title-section {
+    padding: 0 10px;
+
+    &:after { left: 10px;}
+  }
+
+}

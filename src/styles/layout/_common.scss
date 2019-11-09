@@ -1,0 +1,18 @@
+/* ---------------------------
+    layout common:
+-----------------------------*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+h3 { font-size: 2.4rem; }
+a { text-decoration: none; }
+
+main {
+    padding: $l-margin 0;
+}
