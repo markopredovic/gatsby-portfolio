@@ -26,12 +26,13 @@ header {
     .l-title {
       h1 {
         margin-bottom: 0;
-        font-size: 3rem;
+        font-size: 2.8rem;
 
-        a { color: $red-darkest;}
+        a {
+          color: $red-darkest;
+        }
       }
     }
-
   }
 
   /* sidedrawer: */
@@ -46,7 +47,7 @@ header {
     width: 80%;
     max-width: 350px;
     background-color: #fff;
-    transition: transform .3s ease-in;
+    transition: transform 0.3s ease-in;
 
     &.is-opened {
       transform: translateX(100%);
@@ -74,17 +75,18 @@ header {
         margin-left: 0;
 
         li {
-
-         border-bottom: 1px solid $gray;
+          border-bottom: 1px solid $gray;
 
           a {
-          display: block;
-          line-height: 30px;
-          font-size: 1.8rem;
-          text-decoration: none;
+            display: block;
+            line-height: 30px;
+            font-size: 1.8rem;
+            text-decoration: none;
 
-          &.is-active-link { color: $red-dark;}
-        }
+            &.is-active-link {
+              color: $red-dark;
+            }
+          }
         }
       }
     }
@@ -104,6 +106,6 @@ header {
     bottom: 0;
     right: 0;
     z-index: 899;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }

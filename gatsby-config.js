@@ -23,8 +23,8 @@ const { spaceId, accessToken } = contentfulConfig
 
 module.exports = {
   siteMetadata: {
-    title: "markoni.dev",
-    description: 'Portfolio website',
+    title: "markoni.codes",
+    description: "Portfolio website",
     author: "Marko Predovic",
   },
   plugins: [
