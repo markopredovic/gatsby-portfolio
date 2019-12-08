@@ -1,0 +1,33 @@
+/* ---------------------
+    post:
+------------------------*/
+.l-post {
+  .l-header {
+    padding: 30px 10px;
+    margin-bottom: $m-margin;
+    text-align: center;
+    color: #fff;
+    background-color: $red-darkest;
+  }
+  .l-content {
+    padding: 0 10px;
+  }
+  h3.m-post-title {
+    margin-bottom: 20px;
+  }
+  h4.m-post-subtitle {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+  p.m-post-date {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1.42;
+    &:empty {
+      margin-bottom: 0;
+    }
+  }
+  img {
+  }
+}

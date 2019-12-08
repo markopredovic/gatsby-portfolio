@@ -16,7 +16,7 @@
   text-transform: uppercase;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 0;
@@ -36,5 +36,28 @@
     font-size: 1.6rem;
     line-height: 1.4;
   }
-  span { font-size: 1.4rem; font-weight: 700; color: $black;}
+  span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $black;
+  }
+}
+
+code {
+  margin: 0 0 1.45rem;
+  font-size: 1.3rem;
+  line-height: 1.42;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  overflow: auto;
+  padding: 1.45rem;
+  white-space: pre-wrap;
+  display: block;
+}
+
+.m-post-title {
+}
+.m-post-date {
+  font-size: 1.2rem;
+  font-style: italic;
 }

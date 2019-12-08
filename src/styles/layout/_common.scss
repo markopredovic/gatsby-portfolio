@@ -2,17 +2,31 @@
     layout common:
 -----------------------------*/
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }
 
-h3 { font-size: 2.4rem; }
-a { text-decoration: none; }
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+h5 {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+a {
+  color: $blue;
+  text-decoration: none;
+}
 
 main {
-    padding: $l-margin 0;
+  padding: $l-margin 0;
 }

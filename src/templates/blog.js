@@ -8,6 +8,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      subtitle
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
         json
@@ -20,7 +21,6 @@ const blog = props => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        console.log("node", node)
         const alt = node.data.target.fields.title["en-US"]
         const url = node.data.target.fields.file["en-US"].url
 
@@ -31,14 +31,25 @@ const blog = props => {
 
   return (
     <Layout>
-      <div className="l-main-content">
-        <h1>{props.data.contentfulBlogPost.title}</h1>
-        <p>{props.data.contentfulBlogPost.publishedDate}</p>
-        {documentToReactComponents(
-          props.data.contentfulBlogPost.body.json,
-          options
-        )}
-        <Link to="/blog">back to blog</Link>
+      <div className="l-main-content l-post">
+        <div className="l-header">
+          <h3 className="m-post-title">
+            {props.data.contentfulBlogPost.title}
+          </h3>
+          <h4 className="m-post-subtitle">
+            {props.data.contentfulBlogPost.subtitle}
+          </h4>
+        </div>
+        <div className="l-content">
+          {documentToReactComponents(
+            props.data.contentfulBlogPost.body.json,
+            options
+          )}
+          <p className="m-post-date">
+            {props.data.contentfulBlogPost.publishedDate}
+          </p>
+          <Link to="/blog">back to blog</Link>
+        </div>
       </div>
     </Layout>
   )
