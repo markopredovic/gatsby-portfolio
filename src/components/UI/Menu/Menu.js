@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
 const Menu = () => {
   return (
@@ -7,10 +7,24 @@ const Menu = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/" activeClassName="is-active-link">Home</Link>
+            <Link to="/" activeClassName="is-active-link">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/blog" activeClassName="is-active-link">Blog</Link>
+            <Link to="/portfolio" activeClassName="is-active-link">
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" activeClassName="is-active-link">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" activeClassName="is-active-link">
+              Blog
+            </Link>
           </li>
         </ul>
       </nav>
@@ -18,4 +32,4 @@ const Menu = () => {
   )
 }
 
-export default Menu;
+export default Menu

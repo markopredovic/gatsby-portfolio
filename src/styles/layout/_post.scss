@@ -2,15 +2,29 @@
     post:
 ------------------------*/
 .l-post {
+  .l-img {
+    margin-bottom: $m-margin;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
   .l-header {
     padding: 30px 10px;
-    margin-bottom: $m-margin;
+    margin-bottom: $s-margin;
     text-align: center;
     color: #fff;
     background-color: $red-darkest;
   }
   .l-content {
     padding: 0 10px;
+  }
+  .l-back {
+    padding: 20px 10px 0;
   }
   h3.m-post-title {
     margin-bottom: 20px;
@@ -29,5 +43,58 @@
     }
   }
   img {
+  }
+}
+
+.l-posts-list {
+  .l-title {
+    margin-bottom: $m-margin;
+  }
+  .l-content {
+    padding: 0 10px;
+    > ul {
+      list-style: none;
+      margin: 0;
+
+      > li {
+        margin-bottom: $m-margin;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .post-item {
+          display: flex;
+        }
+        .l-img {
+          margin-right: 20px;
+          width: 80px;
+          height: 80px;
+          flex-basis: 80px;
+          overflow: hidden;
+          border-radius: 50px;
+          border: 1px solid $gray;
+
+          img {
+            display: block;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .l-desc {
+          max-width: calc(100% - 110px);
+
+          h3 {
+            margin-bottom: 5px;
+            font-size: 2rem;
+          }
+          p {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+            font-style: italic;
+          }
+        }
+      }
+    }
   }
 }
