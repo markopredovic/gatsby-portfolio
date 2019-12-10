@@ -1,18 +1,23 @@
-import React from 'react';
-import { checkPropTypes } from 'prop-types';
+import React from "react"
+import { Link } from "gatsby"
 
-const PortfolioProject = ({node, showDescription}) => {
+const PortfolioProject = ({ node, showDescription, activeProjectType }) => {
   return (
     <div className="l-portfolio-project">
       <div className="l-img">
-        <img src={node.projectImage.file.url} alt={node.title} />
+        <a href={node.liveUrl} target="_blank">
+          <img src={node.projectImage.file.url} alt={node.title} />
+        </a>
       </div>
       <div className="l-content">
-        <h3>{node.title}</h3>
+        <a href={node.liveUrl} target="_blank">
+          <h3>{node.title}</h3>
+          <h4>{node.projectType}</h4>
+        </a>
         {showDescription && <p>{node.description.description}</p>}
       </div>
     </div>
   )
 }
 
-export default PortfolioProject;
+export default PortfolioProject

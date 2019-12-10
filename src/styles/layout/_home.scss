@@ -12,9 +12,11 @@
   margin-bottom: $l-margin;
 
   .title-section {
-      padding: 0 10px;
+    padding: 0 10px;
 
-      &:after { left: 10px;}
+    &:after {
+      left: 10px;
+    }
   }
 
   .l-accordion {
@@ -41,7 +43,11 @@
       list-style: none;
       margin-left: 0;
 
-      li { margin-bottom: 0; font-size: 1.8rem; line-height: 1.6; }
+      li {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+        line-height: 1.6;
+      }
     }
   }
 }
@@ -53,12 +59,16 @@
   .title-section {
     padding: 0 10px;
 
-    &:after { left: 10px;}
+    &:after {
+      left: 10px;
+    }
   }
 
   .l-portfolio-project {
-
     .l-img {
+      a {
+        display: block;
+      }
       img {
         height: 300px;
         object-fit: cover;
@@ -84,15 +94,15 @@
 
 /* testimonials: */
 .l-home-testimonials {
-
   .carousel.carousel-slider .slide {
-  background-color: $red;
+    background-color: $red;
   }
 
   .title-section {
     padding: 0 10px;
 
-    &:after { left: 10px;}
+    &:after {
+      left: 10px;
+    }
   }
-
 }

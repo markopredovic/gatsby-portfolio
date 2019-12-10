@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Carousel } from 'react-responsive-carousel'
+import { Carousel } from "react-responsive-carousel"
 import PortfolioProject from "../PortfolioProject"
 
-const LatestProjects = ({layoutCssClass}) => {
+const LatestProjects = ({ layoutCssClass }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulPortfolio(
@@ -30,13 +30,13 @@ const LatestProjects = ({layoutCssClass}) => {
   `)
 
   const projects = data.allContentfulPortfolio.edges.map((project, index) => (
-    <PortfolioProject key={index} {...project} showDescription={false}/>
+    <PortfolioProject key={index} {...project} showDescription={false} />
   ))
 
   const options = {
     showArrows: false,
     showThumbs: false,
-    showStatus: false
+    showStatus: false,
   }
 
   return (
@@ -44,9 +44,7 @@ const LatestProjects = ({layoutCssClass}) => {
       <h3 className="title-section">
         <span>Latest Projects</span>
       </h3>
-      <Carousel {...options}>
-      {projects}
-      </Carousel>
+      <Carousel {...options}>{projects}</Carousel>
     </div>
   )
 }
