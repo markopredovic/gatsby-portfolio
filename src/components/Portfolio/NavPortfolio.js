@@ -2,7 +2,7 @@ import React from "react"
 
 const NavPortfolio = ({ activeProjectType, setActiveProjectType, items }) => {
   return (
-    <div className="l-nav-portfolio">
+    <div className="l-nav-portfolio m-nav-portfolio">
       <ul>
         {items.map((item, index) => (
           <li

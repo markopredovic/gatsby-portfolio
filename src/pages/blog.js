@@ -6,7 +6,7 @@ import PageTitle from "../components/PageTitle"
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: ASC }) {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
             title

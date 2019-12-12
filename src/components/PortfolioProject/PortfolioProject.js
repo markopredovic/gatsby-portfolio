@@ -14,7 +14,11 @@ const PortfolioProject = ({ node, showDescription, activeProjectType }) => {
           <h3>{node.title}</h3>
           <h4>{node.projectType}</h4>
         </a>
-        {showDescription && <p>{node.description.description}</p>}
+        {showDescription && (
+          <p className="l-description-project">
+            {node.description.description}
+          </p>
+        )}
       </div>
     </div>
   )
