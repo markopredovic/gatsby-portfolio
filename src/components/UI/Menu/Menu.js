@@ -26,6 +26,11 @@ const Menu = () => {
               Blog
             </Link>
           </li>
+          <li>
+            <Link to="/contact" activeClassName="is-active-link">
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
