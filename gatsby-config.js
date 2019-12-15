@@ -3,21 +3,14 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
 let contentfulConfig
 
-try {
-  // Load the Contentful config from the .contentful.json
-  contentfulConfig = require("./.contentful")
-} catch (_) {}
-
-console.log(contentfulConfig)
-
 contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken:
-    process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 }
+
+console.log("[contentfulConfig]", contentfulConfig)
 
 const { spaceId, accessToken } = contentfulConfig
 
@@ -28,6 +21,12 @@ module.exports = {
     author: "Marko Predovic",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: ["CONTENTFUL_SPACE_ID", "CONTENTFUL_ACCESS_TOKEN"],
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
