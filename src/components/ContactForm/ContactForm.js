@@ -3,7 +3,12 @@ import React from "react"
 const ContactForm = () => {
   return (
     <div className="l-contact-form">
-      <form name="Contact Form" method="post" data-netlify="true">
+      <form
+        name="Contact Form"
+        method="post"
+        data-netlify="true"
+        action="/thank-you/"
+      >
         <input type="hidden" name="form-name" value="Contact Form" />
         <div className="l-field">
           <label htmlFor="contact-name">Name:</label>
