@@ -1,0 +1,17 @@
+/* -------------------------------
+  services:
+-------------------------------- */
+.l-services {
+  .l-content {
+    padding: $s-padding 10px;
+
+    list-style: none;
+    margin: 0;
+
+    li {
+      margin-bottom: $s-margin;
+      padding-bottom: $s-padding;
+      border-bottom: 1px dashed $red-dark;
+    }
+  }
+}

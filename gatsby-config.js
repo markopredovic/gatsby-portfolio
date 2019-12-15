@@ -12,8 +12,6 @@ contentfulConfig = {
 
 console.log("[contentfulConfig]", contentfulConfig)
 
-const { spaceId, accessToken } = contentfulConfig
-
 module.exports = {
   siteMetadata: {
     title: "markoni.codes",
