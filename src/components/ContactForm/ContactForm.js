@@ -17,18 +17,16 @@ const ContactForm = () => {
     e.preventDefault()
     console.log("[SUBMIT FORM]")
 
-    axios
-      .post({
-        url: "/",
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        data: encode({
-          "form-name": "Contact Form",
-          "contact-name": name,
-          "contact-email": email,
-          "contact-message": message,
-        }),
-      })
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "Contact Form",
+        "contact-name": name,
+        "contact-email": email,
+        "contact-message": message,
+      }),
+    })
       .then(() => console.log("[SUCCESS]"))
       .catch(e => console.log("[ERROR]", e))
   }
