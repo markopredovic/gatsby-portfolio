@@ -2,7 +2,7 @@
 
 .contact_form {
   .l_field {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     label {
       display: block;
@@ -15,7 +15,7 @@
   }
 
   .intro {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 1.8rem;
     line-height: 1.44;
   }
@@ -38,6 +38,13 @@
 
   textarea {
     width: 100%;
-    min-height: 150px;
+    padding: 10px;
+    min-height: 120px;
+  }
+
+  .error {
+    padding: 3px 0;
+    font-size: 1.3rem;
+    color: $red;
   }
 }
