@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 const ThankYou = () => {
   return (
     <div className="l-thank-you">
-      <p>Your form submission has been received.</p>
-      <p>Will be answer to you in ASAP.</p>
+      <p>Your message has been received.</p>
+      <p>I'll get back to you ASAP.</p>
     </div>
   )
 }
