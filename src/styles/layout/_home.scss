@@ -40,6 +40,7 @@
     }
 
     ul {
+      display: none;
       list-style: none;
       margin-left: 0;
 
@@ -47,6 +48,10 @@
         margin-bottom: 0;
         font-size: 1.8rem;
         line-height: 1.6;
+      }
+
+      &.is-active {
+        display: block;
       }
     }
   }
@@ -88,6 +93,9 @@
         background-color: rgba(0, 0, 0, 0.5);
         color: #fff;
       }
+      h4 {
+        display: none;
+      }
     }
   }
 }
@@ -103,6 +111,52 @@
 
     &:after {
       left: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .l-home-skills {
+    .title-section {
+      padding: 0 15px;
+    }
+    .l-accordion {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
+    .l-accordion-item {
+      margin-bottom: 0;
+
+      h3 span {
+        display: none;
+      }
+
+      ul {
+        display: block;
+        margin-bottom: 0;
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .l-latest-projects {
+    .title-section {
+      padding: 0 15px;
+    }
+    .l-portfolio-project {
+      .l-img img {
+        height: 450px;
+      }
+    }
+  }
+
+  .l-home-testimonials {
+    .title-section {
+      padding: 0 15px;
+    }
+    .m-testimonial {
+      padding: 40px 25%;
     }
   }
 }

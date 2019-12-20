@@ -6,3 +6,9 @@
     padding: $s-padding 10px;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .l-contact .l-contact-form {
+    padding: 20px 15px;
+  }
+}

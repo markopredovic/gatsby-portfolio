@@ -16,7 +16,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 5px $s-margin/2;
-    border-bottom: 1px solid lighten($gray, 50%);
+    box-shadow: 0 0 2px $gray;
 
     .l-hamburger-menu {
       position: absolute;
@@ -47,7 +47,7 @@ header {
     width: 80%;
     max-width: 350px;
     background-color: #fff;
-    transition: transform 0.3s ease-in;
+    transition: transform 0.2s ease-in;
 
     &.is-opened {
       transform: translateX(100%);
@@ -107,5 +107,24 @@ header {
     right: 0;
     z-index: 899;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  header {
+    .l-sidedrawer {
+      left: -350px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    .l-header {
+      height: 70px;
+      .l-title h1 {
+        font-size: 3.6rem;
+      }
+    }
   }
 }

@@ -7,7 +7,7 @@
       position: relative;
 
       &:before {
-        content: '';
+        content: "";
         display: block;
         padding-top: 80%;
       }
@@ -37,7 +37,17 @@
         background-color: rgba(0, 0, 0, 0.5);
         color: #fff;
       }
-      p { display: none; }
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .m-banner {
+    .m-banner-slide .l-img:before {
+      padding-top: 40%;
     }
   }
 }

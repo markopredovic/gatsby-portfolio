@@ -79,3 +79,15 @@
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .l-portfolio .l-nav-portfolio {
+    padding: 20px 15px;
+  }
+  .l-portfolio .l-portfolio-project .l-content h3 {
+    padding: 0 15px 10px;
+  }
+  .l-portfolio .l-portfolio-project .l-content h4 {
+    right: 15px;
+  }
+}

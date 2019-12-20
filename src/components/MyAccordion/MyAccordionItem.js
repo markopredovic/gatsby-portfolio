@@ -17,17 +17,13 @@ const MyAccordionItem = ({
     <div className="l-accordion-item">
       <h3 onClick={onClickHandler}>
         {item_content}
-        <span>
-  { active ? <FaChevronUp /> : <FaChevronDown /> }
-        </span>
+        <span>{active ? <FaChevronUp /> : <FaChevronDown />}</span>
       </h3>
-      {active && (
-        <ul className="animated faster zoomIn">
-          {json[item_content].map((skill, index) => (
-            <li key={index}>{skill}</li>
-          ))}
-        </ul>
-      )}
+      <ul className={active ? "is-active" : ""}>
+        {json[item_content].map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
+      </ul>
     </div>
   )
 }

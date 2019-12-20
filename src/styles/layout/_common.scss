@@ -31,5 +31,11 @@ a {
 }
 
 main {
-  padding: $l-margin 0;
+  padding: $l-padding 0;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    padding: $l-padding + 10px 0;
+  }
 }
