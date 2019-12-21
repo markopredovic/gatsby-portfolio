@@ -8,6 +8,19 @@ header {
   width: 100%;
   z-index: 100;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  &.l-dark {
+    background-color: $black;
+
+    .l-header .l-title h1 a {
+      color: #fff;
+    }
+
+    .m-hamburger-menu {
+      color: #fff;
+    }
+  }
 
   .l-header {
     position: relative;

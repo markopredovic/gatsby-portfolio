@@ -3,15 +3,14 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { FaBars } from "react-icons/fa"
 
-import SideDrawer from '../SideDrawer'
+import SideDrawer from "../SideDrawer"
 import Backdrop from "../UI/Backdrop"
 
-const Header = ({ siteTitle }) => {
-
+const Header = ({ siteTitle, mode }) => {
   const [isOpened, setIsOpened] = useState(false)
 
   return (
-    <header>
+    <header className={mode}>
       <div className="l-header">
         <div
           className="l-hamburger-menu m-hamburger-menu"
@@ -36,7 +35,6 @@ const Header = ({ siteTitle }) => {
     </header>
   )
 }
-
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
