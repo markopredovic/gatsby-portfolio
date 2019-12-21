@@ -2,19 +2,12 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PortfolioProject from "../PortfolioProject"
 import NavPortfolio from "../Portfolio/NavPortfolio"
+import PortfolioIntro from "./PortfolioIntro"
 
 const Portfolio = () => {
   const [activeProjectType, setActiveProjectType] = useState("All")
 
-  const items = [
-    "All",
-    "Magento 2",
-    "Magento 1",
-    "Wordpress",
-    "Email template",
-    "PSD to HTML",
-    "Hybris",
-  ]
+  const items = ["All", "Magento", "React js", "Vue js", "Wordpress", "Other"]
 
   const data = useStaticQuery(graphql`
     query {
@@ -42,7 +35,13 @@ const Portfolio = () => {
     .filter(project => {
       if (activeProjectType === null || activeProjectType === "All")
         return project
-      else return activeProjectType === project.node.projectType
+      else if (activeProjectType === "Other") {
+        return ["Email template", "PSD to HTML", "Hybris"].includes(
+          project.node.projectType
+        )
+      } else {
+        return activeProjectType === project.node.projectType
+      }
     })
     .map((project, index) => (
       <PortfolioProject
@@ -61,6 +60,7 @@ const Portfolio = () => {
         setActiveProjectType={setActiveProjectType}
         items={items}
       />
+      <PortfolioIntro type={activeProjectType} />
       {projects}
     </div>
   )

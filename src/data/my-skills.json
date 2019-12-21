@@ -3,9 +3,9 @@
         "HTML", "CSS", "Javascript", "PHP", "MySql", "linux", "git"
     ],
     "Library and frameworks": [
-        "React js", "Node js", "Redux", "PWA", "jQuery", "Gatsby js", "Requirejs", "GraphQL"
+        "React js", "Node js", "Vue js", "Express js", "Redux", "PWA", "Gatsby js", "GraphQL"
     ],
     "CMS and tools": [
-        "WordPress", "Magento", "Contentful", "Netlify", "Webpack", "Gulp", "Grunt"
+        "Magento", "WordPress", "Contentful", "Netlify", "Webpack", "Firebase", "Heroku"
     ]
 }

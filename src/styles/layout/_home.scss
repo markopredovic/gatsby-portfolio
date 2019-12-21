@@ -60,6 +60,7 @@
 /* latest projects: */
 .l-latest-projects {
   margin-bottom: $l-margin;
+  padding: 0 10px;
 
   .title-section {
     padding: 0 10px;
@@ -71,6 +72,9 @@
 
   .l-portfolio-project {
     .l-img {
+      padding: 10px;
+      border: 1px solid $gray;
+
       a {
         display: block;
       }
