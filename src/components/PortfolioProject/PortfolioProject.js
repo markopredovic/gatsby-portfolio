@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const PortfolioProject = ({ node, showDescription, activeProjectType }) => {
+const PortfolioProject = ({ node, showDescription, index }) => {
   return (
-    <div className="l-portfolio-project animated fadeIn">
+    <div className={`l-portfolio-project portfolio-project-${index}`}>
       <div className="l-img">
         <a href={node.liveUrl} target="_blank">
           <img src={node.projectImage.file.url} alt={node.title} />

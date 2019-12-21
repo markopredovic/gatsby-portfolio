@@ -160,3 +160,146 @@
     }
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .l-latest-projects {
+    .title-section {
+      padding: 0 30px;
+      &:after {
+        left: 30px;
+      }
+    }
+    .l-home-projects {
+      padding: 0 30px;
+      display: grid;
+      grid-gap: 15px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        "img1 img1 img1 img1 img2 img2"
+        "img1 img1 img1 img1 img3 img3"
+        "img4 img4 img4 img5 img5 img5";
+
+      .l-portfolio-project {
+        position: relative;
+        padding: 10px;
+        box-shadow: 0 0 3px $gray;
+        border-radius: 4px;
+        .l-img {
+          height: auto;
+          a {
+            height: auto;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .l-content {
+          bottom: 20px;
+          text-align: center;
+        }
+      }
+
+      .portfolio-project-0 {
+        grid-area: img1;
+
+        .l-img img {
+          height: 300px;
+        }
+      }
+      .portfolio-project-1 {
+        grid-area: img2;
+        .l-img img {
+          height: 150px;
+        }
+      }
+      .portfolio-project-2 {
+        grid-area: img3;
+        .l-img img {
+          height: 150px;
+        }
+      }
+      .portfolio-project-3 {
+        grid-area: img4;
+        .l-img img {
+          height: 200px;
+        }
+      }
+      .portfolio-project-4 {
+        grid-area: img5;
+        .l-img img {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .l-latest-projects {
+    .l-home-projects {
+      .portfolio-project-0 {
+        .l-img img {
+          height: 400px;
+        }
+      }
+      .portfolio-project-1 {
+        .l-img img {
+          height: 200px;
+        }
+      }
+      .portfolio-project-2 {
+        .l-img img {
+          height: 200px;
+        }
+      }
+      .portfolio-project-3 {
+        .l-img img {
+          height: 300px;
+        }
+      }
+      .portfolio-project-4 {
+        .l-img img {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .l-latest-projects {
+    .l-home-projects {
+      .portfolio-project-0 {
+        .l-img img {
+          height: 500px;
+        }
+      }
+      .portfolio-project-1 {
+        .l-img img {
+          height: 250px;
+        }
+      }
+      .portfolio-project-2 {
+        .l-img img {
+          height: 250px;
+        }
+      }
+      .portfolio-project-3 {
+        .l-img img {
+          height: 350px;
+        }
+      }
+      .portfolio-project-4 {
+        .l-img img {
+          height: 350px;
+        }
+      }
+    }
+  }
+}

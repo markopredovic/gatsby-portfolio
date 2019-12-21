@@ -2,13 +2,39 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-responsive-carousel"
 import PortfolioProject from "../PortfolioProject"
+import { useMediaQuery } from "react-responsive"
 
 const LatestProjects = ({ layoutCssClass }) => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 991px)",
+  })
+  const isDesktop = !isMobile
+
   const data = useStaticQuery(graphql`
     query {
-      allContentfulPortfolio(
+      mobilePortfolioProjects: allContentfulPortfolio(
         sort: { fields: publishedDate, order: DESC }
         limit: 3
+      ) {
+        edges {
+          node {
+            title
+            projectType
+            liveUrl
+            description {
+              description
+            }
+            projectImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+      desktopPortfolioProjects: allContentfulPortfolio(
+        sort: { fields: publishedDate, order: DESC }
+        limit: 5
       ) {
         edges {
           node {
@@ -29,8 +55,17 @@ const LatestProjects = ({ layoutCssClass }) => {
     }
   `)
 
-  const projects = data.allContentfulPortfolio.edges.map((project, index) => (
-    <PortfolioProject key={index} {...project} showDescription={false} />
+  let projects = isMobile
+    ? data.mobilePortfolioProjects
+    : data.desktopPortfolioProjects
+
+  projects = projects.edges.map((project, index) => (
+    <PortfolioProject
+      key={index}
+      {...project}
+      index={index}
+      showDescription={false}
+    />
   ))
 
   const options = {
@@ -44,7 +79,8 @@ const LatestProjects = ({ layoutCssClass }) => {
       <h3 className="title-section">
         <span>Latest Projects</span>
       </h3>
-      <Carousel {...options}>{projects}</Carousel>
+      {isMobile && <Carousel {...options}>{projects}</Carousel>}
+      {isDesktop && <div className="l-home-projects">{projects}</div>}
     </div>
   )
 }
