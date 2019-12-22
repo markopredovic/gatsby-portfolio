@@ -2,8 +2,17 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
+import { useMediaQuery } from "react-responsive"
 
-const Testimonials = ({layoutCssClass}) => {
+const Testimonials = ({ layoutCssClass }) => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  })
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 768px)",
+  })
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulTestimonial {
@@ -28,21 +37,33 @@ const Testimonials = ({layoutCssClass}) => {
     )
   )
 
-  const options = {
+  const optionsMobile = {
+    emulateTouch: true,
     showThumbs: false,
     showStatus: false,
     showArrows: false,
     interval: 6000,
     autoPlay: true,
-    infiniteLoop: true
+    infiniteLoop: true,
+  }
+
+  const optionsDesktop = {
+    emulateTouch: true,
+    showThumbs: false,
+    showStatus: false,
+    showArrows: false,
+    interval: 6000,
+    autoPlay: true,
+    infiniteLoop: true,
+    centerMode: true,
+    centerSlidePercentage: 33.33,
   }
 
   return (
     <div className={layoutCssClass}>
-      <h3 className="title-section">
-        My clients said ...
-      </h3>
-      <Carousel {...options}>{testimonials}</Carousel>
+      <h3 className="title-section">My clients said ...</h3>
+      {isMobile && <Carousel {...optionsMobile}>{testimonials}</Carousel>}
+      {isDesktop && <Carousel {...optionsDesktop}>{testimonials}</Carousel>}
     </div>
   )
 }

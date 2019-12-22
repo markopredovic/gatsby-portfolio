@@ -31,8 +31,6 @@ const ContactForm = () => {
 
   const handleFormSubmit = e => {
     e.preventDefault()
-    console.log("[SUBMIT FORM]")
-
     const errors = validate()
 
     if (Object.keys(errors).length === 0) {

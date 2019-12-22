@@ -25,8 +25,6 @@ const ServicesPage = () => {
 
   const services = data.allContentfulService.edges
 
-  console.log("[SERVICES]", services)
-
   return (
     <Layout>
       <SEO title="Services" />

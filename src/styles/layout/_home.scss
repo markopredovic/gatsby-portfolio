@@ -191,6 +191,9 @@
         border-radius: 4px;
         .l-img {
           height: auto;
+          padding: 0;
+          box-shadow: unset;
+          border: none;
           a {
             height: auto;
           }

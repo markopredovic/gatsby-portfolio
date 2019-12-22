@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
   const [headerMode, setHeaderMode] = useState("")
 
   const handleScroll = evt => {
-    console.log("scroll event", evt)
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
     if (scrollTop > 10) {

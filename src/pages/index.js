@@ -23,7 +23,7 @@ const IndexPage = () => (
 export default IndexPage
 
 // TODO:
-// 1. Portfolio page
-// 2. Services page
-// 3. Contact form
+// 1. Banner images: desktop magento image
+// 2. Testimonials responsive
+// 3.
 // 4.

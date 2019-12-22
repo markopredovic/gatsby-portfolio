@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby"
 
-const Banner = ({layoutCssClass}) => {
-
+const Banner = ({ layoutCssClass }) => {
   const data = useStaticQuery(graphql`
     {
       allContentfulBannerSlider {
@@ -59,18 +58,16 @@ const Banner = ({layoutCssClass}) => {
     showArrows: false,
     showThumbs: false,
     showStatus: false,
-    onClickItem: () => console.log('Clicked!')
+    onClickItem: () => {},
   }
 
   return (
     <div className={layoutCssClass}>
       <div className="m-banner">
-        <Carousel {...options}>
-          {banners}
-        </Carousel>
+        <Carousel {...options}>{banners}</Carousel>
       </div>
     </div>
   )
 }
 
-export default Banner;
+export default Banner
