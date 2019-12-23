@@ -160,6 +160,10 @@ header {
 
       .l-title h1 {
         font-size: 4rem;
+
+        a {
+          font-size: 4rem;
+        }
       }
 
       .l-menu {
@@ -175,7 +179,7 @@ header {
               color: $black;
 
               &.is-active-link {
-                color: $red-darkest;
+                color: $red;
               }
             }
           }

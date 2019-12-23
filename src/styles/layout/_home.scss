@@ -45,9 +45,15 @@
       margin-left: 0;
 
       li {
+        display: flex;
+        align-items: center;
         margin-bottom: 0;
         font-size: 1.8rem;
         line-height: 1.6;
+
+        svg {
+          margin-right: 10px;
+        }
       }
 
       &.is-active {
@@ -160,12 +166,24 @@
       padding: 0 15px;
     }
     .m-testimonial {
-      padding: 40px 25%;
+      padding: 40px 15%;
     }
   }
 }
 
 @media only screen and (min-width: 992px) {
+  .l-home-skills {
+    .title-section {
+      padding: 0 30px;
+      &:after {
+        left: 30px;
+      }
+    }
+    .l-accordion {
+      padding: 20px 30px;
+    }
+  }
+
   .l-latest-projects {
     .title-section {
       padding: 0 30px;
@@ -242,6 +260,15 @@
         .l-img img {
           height: 200px;
         }
+      }
+    }
+  }
+
+  .l-home-testimonials {
+    .title-section {
+      padding: 0 30px;
+      &:after {
+        left: 30px;
       }
     }
   }

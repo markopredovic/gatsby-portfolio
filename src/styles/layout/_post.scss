@@ -31,7 +31,6 @@
   }
   h4.m-post-subtitle {
     margin-bottom: 0;
-    font-size: 1.6rem;
   }
   p.m-post-date {
     margin-bottom: 20px;
@@ -105,5 +104,41 @@
   }
   .l-post .l-content {
     padding: 0 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .l-posts-list .l-content {
+    padding: 0 30px;
+
+    > ul > li {
+      .l-img {
+        margin-right: 30px;
+        width: 120px;
+        height: 120px;
+        flex-basis: 120px;
+        border-radius: 100%;
+
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      .l-desc {
+        padding-top: 10px;
+        h3 {
+          margin-bottom: 10px;
+          font-size: 2.4rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .l-post {
+    .l-content {
+      padding: 0 30px;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { FaChevronDown, FaChevronUp } from "react-icons/fa"
+import { FaChevronDown, FaChevronUp, FaLaptopCode } from "react-icons/fa"
 
 const MyAccordionItem = ({
   item_content,
@@ -21,7 +21,10 @@ const MyAccordionItem = ({
       </h3>
       <ul className={active ? "is-active" : ""}>
         {json[item_content].map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <li key={index}>
+            <FaLaptopCode />
+            {skill}
+          </li>
         ))}
       </ul>
     </div>

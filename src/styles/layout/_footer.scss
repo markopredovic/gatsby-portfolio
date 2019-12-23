@@ -38,7 +38,13 @@
     margin-bottom: $s-margin + 10px;
 
     p {
+      display: flex;
+      align-items: center;
       margin-bottom: 10px;
+
+      svg {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -49,5 +55,11 @@
 @media only screen and (min-width: 768px) {
   .l-footer {
     padding: 40px 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .l-footer {
+    padding: 40px 30px;
   }
 }
