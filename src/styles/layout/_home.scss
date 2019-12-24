@@ -112,6 +112,7 @@
 
 /* testimonials: */
 .l-home-testimonials {
+  margin-bottom: $l-margin;
   .carousel.carousel-slider .slide {
     background-color: $red;
   }
@@ -122,6 +123,27 @@
     &:after {
       left: 10px;
     }
+  }
+}
+
+/* random quote: */
+.l-random-quote {
+  .l-content {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  p {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: $gray;
+  }
+  strong {
+    float: right;
+    font-size: 1.4rem;
   }
 }
 
@@ -169,18 +191,26 @@
       padding: 40px 15%;
     }
   }
+
+  .l-random-quote {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .l-home-skills {
     .title-section {
       padding: 0 30px;
+      max-width: $max-container-width;
+      margin: 0 auto $m-margin;
       &:after {
         left: 30px;
       }
     }
     .l-accordion {
       padding: 20px 30px;
+      max-width: $max-container-width;
+      margin: 0 auto $m-margin;
     }
   }
 

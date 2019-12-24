@@ -31,6 +31,11 @@ const Menu = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/about" activeClassName="is-active-link">
+              About
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

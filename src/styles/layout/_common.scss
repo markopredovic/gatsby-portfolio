@@ -32,6 +32,11 @@ a {
 
 p {
   font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.l-container {
+  padding: 0 10px;
 }
 
 main {
@@ -39,6 +44,9 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  .l-container {
+    padding: 0 15px;
+  }
   main {
     padding: $l-padding + 10px 0;
   }
@@ -58,10 +66,15 @@ main {
     font-size: 2rem;
   }
   p {
-    font-size: 1, 8rem;
+    font-size: 1.8rem;
   }
   a {
     font-size: 1.8rem;
+  }
+  .l-container {
+    padding: 0 30px;
+    max-width: $max-container-width;
+    margin: 0 auto;
   }
   main {
     padding: $l-padding + 20px 0;

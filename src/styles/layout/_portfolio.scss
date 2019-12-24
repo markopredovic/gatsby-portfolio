@@ -16,10 +16,10 @@
   }
 
   .l-portfolio-intro {
-    margin-bottom: $m-margin - 10px;
+    margin-bottom: $s-margin;
 
     p.lead {
-      padding: 40px;
+      padding: 20px 30px;
     }
   }
 
@@ -118,10 +118,11 @@
     margin: 0 auto;
   }
   .l-portfolio .l-portfolio-intro {
-    margin-bottom: $l-margin;
+    margin-bottom: $m-margin;
     p.lead {
       max-width: $max-container-width;
       margin: 0 auto;
+      border-radius: 4px;
     }
   }
   .l-portfolio .l-portfolio-project {

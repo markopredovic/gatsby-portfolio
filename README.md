@@ -3,7 +3,8 @@
 1. React responsive carousel: https://www.npmjs.com/package/react-responsive-carousel
 2. React icons: https://react-icons.netlify.com/#/
 3. React responsive: https://www.npmjs.com/package/react-responsive
+4. Random quote API: https://pprathameshmore.github.io/QuoteGarden/
 
-## How to articles
+## Help articles
 
-https://swas.io/blog/using-multiple-queries-on-gatsbyjs-createpages-node-api/
+1. https://swas.io/blog/using-multiple-queries-on-gatsbyjs-createpages-node-api/

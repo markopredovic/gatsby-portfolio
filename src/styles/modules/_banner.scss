@@ -51,3 +51,19 @@
     }
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .m-banner {
+    .m-banner-slide .l-img:before {
+      padding-top: 38%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .m-banner {
+    .m-banner-slide .l-img:before {
+      padding-top: 35%;
+    }
+  }
+}
