@@ -1,6 +1,9 @@
 @import "../../styles/variables";
 
 .contact_form {
+  form {
+    margin-bottom: 0;
+  }
   .l_field {
     margin-bottom: 20px;
 
@@ -26,6 +29,7 @@
     height: 40px;
     line-height: 40px;
     font-size: 1.6rem;
+    border: 1px solid $gray;
 
     &[type="submit"] {
       padding: 0 40px;
@@ -40,6 +44,7 @@
     width: 100%;
     padding: 10px;
     min-height: 120px;
+    border: 1px solid $gray;
   }
 
   .error {
@@ -58,13 +63,23 @@
       justify-content: space-between;
     }
 
+    .l_left {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+    }
+    .l_right {
+      width: 100%;
+
+      .l_field {
+        width: 100%;
+      }
+    }
+
     .l_field {
       width: 48%;
       margin-bottom: 20px;
-
-      &:nth-last-child(2) {
-        width: 100%;
-      }
 
       label {
         display: block;
@@ -109,6 +124,53 @@
       padding: 3px 0;
       font-size: 1.3rem;
       color: $red;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact_form {
+    form {
+    }
+    .l_field {
+      margin-bottom: 30px;
+    }
+
+    .l_left {
+      width: 48%;
+      display: block;
+
+      .l_field {
+        width: 100%;
+      }
+    }
+    .l_right {
+      width: 48%;
+    }
+
+    .l_field {
+      &:nth-last-child(2) {
+      }
+
+      label {
+      }
+    }
+    .l_action {
+    }
+
+    .intro {
+    }
+
+    input {
+      &[type="submit"] {
+      }
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+
+    .error {
     }
   }
 }

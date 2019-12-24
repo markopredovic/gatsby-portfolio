@@ -65,41 +65,47 @@ const ContactForm = () => {
           onSubmit={handleFormSubmit}
         >
           <input type="hidden" name="form-name" value="Contact Form" />
-          <div className={styles.l_field}>
-            <label htmlFor="contact-name">
-              Name <span style={{ color: "#c3073f" }}>*</span>
-            </label>
-            <input
-              type="text"
-              name="contact-name"
-              onChange={e => setName(e.target.value)}
-              style={errors && errors.name && { border: "1px solid #c3073f" }}
-            />
-            {errors && errors.name && (
-              <span className={styles.error}>{errors.name}</span>
-            )}
+          <div className={styles.l_left}>
+            <div className={styles.l_field}>
+              <label htmlFor="contact-name">
+                Name <span style={{ color: "#c3073f" }}>*</span>
+              </label>
+              <input
+                type="text"
+                name="contact-name"
+                onChange={e => setName(e.target.value)}
+                style={errors && errors.name && { border: "1px solid #c3073f" }}
+              />
+              {errors && errors.name && (
+                <span className={styles.error}>{errors.name}</span>
+              )}
+            </div>
+            <div className={styles.l_field}>
+              <label htmlFor="contact-email">Email</label>
+              <input
+                type="email"
+                name="contact-email"
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
           </div>
-          <div className={styles.l_field}>
-            <label htmlFor="contact-email">Email</label>
-            <input
-              type="email"
-              name="contact-email"
-              onChange={e => setEmail(e.target.value)}
-            />
+
+          <div className={styles.l_right}>
+            <div className={styles.l_field}>
+              <label htmlFor="contact-message">
+                Message <span style={{ color: "#c3073f" }}>*</span>
+              </label>
+              <textarea
+                name="contact-message"
+                onChange={e => setMessage(e.target.value)}
+                style={errors && errors.message && { borderColor: "#c3073f" }}
+              />
+              {errors && errors.message && (
+                <span className={styles.error}>{errors.message}</span>
+              )}
+            </div>
           </div>
-          <div className={styles.l_field}>
-            <label htmlFor="contact-message">
-              Message <span style={{ color: "#c3073f" }}>*</span>
-            </label>
-            <textarea
-              name="contact-message"
-              onChange={e => setMessage(e.target.value)}
-              style={errors && errors.message && { borderColor: "#c3073f" }}
-            />
-            {errors && errors.message && (
-              <span className={styles.error}>{errors.message}</span>
-            )}
-          </div>
+
           <div className={styles.l_action}>
             <input type="submit" value="Send" />
           </div>
