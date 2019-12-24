@@ -23,7 +23,7 @@ const IndexPage = () => (
 export default IndexPage
 
 // TODO:
-// 1. Banner images: desktop magento image
-// 2. Testimonials responsive
+// 1. Banner images: Wordpress, Vue js
+// 2. add About page: technology used
 // 3.
 // 4.
