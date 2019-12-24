@@ -5,7 +5,7 @@ import Banner from "../components/Banner"
 import MySkills from "../components/MySkills"
 import LatestProjects from "../components/LatestProjects"
 import Testimonials from "../components/Testimonials"
-import RandomQuote from "../components/RandomQuote"
+import AboutMe from "../components/AboutMe"
 
 const IndexPage = () => (
   <Layout>
@@ -18,8 +18,8 @@ const IndexPage = () => (
     <LatestProjects layoutCssClass="l-latest-projects" />
     {/* testimonials: */}
     <Testimonials layoutCssClass="l-home-testimonials" />
-    {/* quote of the day */}
-    <RandomQuote />
+    {/* about me: */}
+    <AboutMe />
   </Layout>
 )
 

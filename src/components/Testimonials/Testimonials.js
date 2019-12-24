@@ -61,9 +61,15 @@ const Testimonials = ({ layoutCssClass }) => {
 
   return (
     <div className={layoutCssClass}>
-      <h3 className="title-section">My clients said ...</h3>
-      {isMobile && <Carousel {...optionsMobile}>{testimonials}</Carousel>}
-      {isDesktop && <Carousel {...optionsDesktop}>{testimonials}</Carousel>}
+      <div className="l-container">
+        <h3 className="title-section">My clients said ...</h3>
+      </div>
+      <div className="l-wrapper">
+        <div className="l-container">
+          {isMobile && <Carousel {...optionsMobile}>{testimonials}</Carousel>}
+          {isDesktop && <Carousel {...optionsDesktop}>{testimonials}</Carousel>}
+        </div>
+      </div>
     </div>
   )
 }
