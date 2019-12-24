@@ -3,11 +3,15 @@
 ----------------------------------- */
 .l-portfolio {
   .l-nav-portfolio {
-    padding: 20px 10px;
+    padding: 30px 10px;
 
     ul {
       list-style: none;
       margin: 0;
+
+      li {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -16,10 +20,6 @@
 
     p.lead {
       padding: 40px;
-      font-size: 1.8rem;
-      line-height: 1.6;
-      color: #fff;
-      background-color: $gray;
     }
   }
 
@@ -108,5 +108,49 @@
   }
   .l-portfolio .l-portfolio-project .l-content h4 {
     right: 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .l-portfolio .l-nav-portfolio {
+    padding: 20px 30px;
+    max-width: $max-container-width;
+    margin: 0 auto;
+  }
+  .l-portfolio .l-portfolio-intro {
+    margin-bottom: $l-margin;
+    p.lead {
+      max-width: $max-container-width;
+      margin: 0 auto;
+    }
+  }
+  .l-portfolio .l-portfolio-project {
+    padding: 0 30px;
+    max-width: $max-container-width;
+    margin: 0 auto $l-margin;
+    flex-wrap: nowrap;
+    .l-img {
+      order: 1;
+      width: 48%;
+      margin-right: 4%;
+    }
+    .l-content {
+      order: 2;
+      width: 48%;
+
+      h3 {
+        padding: 0;
+        margin-bottom: 10px;
+      }
+      h4 {
+        position: static;
+        display: inline-block;
+      }
+      .l-description-project {
+        display: block;
+        font-size: 1.7rem;
+        line-height: 1.5;
+      }
+    }
   }
 }

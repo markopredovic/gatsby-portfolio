@@ -55,7 +55,11 @@ code {
   display: block;
 }
 
-.m-post-title {
+.lead {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #fff;
+  background-color: $gray;
 }
 .m-post-date {
   font-size: 1.2rem;
@@ -63,6 +67,7 @@ code {
 }
 
 .title-page {
+  margin-bottom: 0;
   padding: 20px 10px;
   text-align: center;
   color: #fff;
@@ -89,5 +94,8 @@ code {
   }
   code {
     font-size: 1.4rem;
+  }
+  p.lead {
+    font-size: 2rem;
   }
 }
