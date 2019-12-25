@@ -129,14 +129,9 @@
   }
   p {
     margin-bottom: 10px;
-    column-count: 2;
     font-size: 1.8rem;
     font-style: italic;
     color: $gray;
-  }
-  strong {
-    float: right;
-    font-size: 1.4rem;
   }
 }
 
@@ -282,7 +277,10 @@
     }
   }
 
-  .l-home-testimonials {
+  .l-about-me {
+    p {
+      column-count: 2;
+    }
   }
 }
 
