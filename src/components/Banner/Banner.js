@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const Banner = ({ layoutCssClass }) => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulBannerSlider {
+      allContentfulBannerSlider(sort: { fields: position, order: ASC }) {
         edges {
           node {
             title
