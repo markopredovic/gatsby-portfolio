@@ -10,7 +10,7 @@ const AboutMe = () => {
         <h3 className="title-section">About me</h3>
         <div className="l-content">
           <p>
-            7+ years of hands-on frontend development experience, working with
+            8+ years of hands-on frontend development experience, working with
             many clients on a diverse set of projects, gaining valuable
             knowledge along the way. I understand the best client's uncertainty
             and the fear of failure, so I go an 'extra mile' to ensure success
