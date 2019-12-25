@@ -118,8 +118,8 @@
   }
 }
 
-/* random quote: */
-.l-random-quote {
+/* rabout me: */
+.l-about-me {
   .l-content {
     &:after {
       content: "";
@@ -129,6 +129,7 @@
   }
   p {
     margin-bottom: 10px;
+    column-count: 2;
     font-size: 1.8rem;
     font-style: italic;
     color: $gray;
