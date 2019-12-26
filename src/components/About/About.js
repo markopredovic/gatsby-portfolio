@@ -3,17 +3,38 @@ import React from "react"
 const About = () => {
   return (
     <div className="l-about-content">
-      <h3>Lorem ipsum</h3>
+      <h3>JAM technology stack</h3>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ipsum
-        iste obcaecati corrupti quae doloribus autem adipisci numquam earum
-        asperiores.
+        Website is built with <a href="https://www.gatsbyjs.org/">Gatsby Js</a>,{" "}
+        <a href="https://www.contentful.com/">Contentful CMS</a>,{" "}
+        <a href="https://github.com/">github</a> and{" "}
+        <a href="https://www.netlify.com/">netlify</a> .
       </p>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab sunt illo
-        saepe adipisci optio excepturi, tempora aliquam impedit nihil! Voluptate
-        quasi officiis hic vel! Earum eos libero aut quia inventore.
+        Gatsby Js for building frontend with React Js, and pull dynamic data
+        from Contentful headless CMS.
       </p>
+      <p>
+        Contentful CMS for creating custom content - Blog posts, banners,
+        portfolio projects, services, testimonials.
+      </p>
+      <p>Github for code repository</p>
+      <p>
+        Netlify for deploying website, using netlify forms for implementing
+        contact form.
+      </p>
+      <h3>React 3rd-party plugins using on website:</h3>
+
+      <ul>
+        <li>
+          React responsive carousel:
+          https://www.npmjs.com/package/react-responsive-carousel
+        </li>
+        <li>React icons: https://react-icons.netlify.com/#/</li>
+        <li>
+          React responsive: https://www.npmjs.com/package/react-responsive
+        </li>
+      </ul>
     </div>
   )
 }

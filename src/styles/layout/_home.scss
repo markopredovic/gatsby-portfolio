@@ -188,9 +188,8 @@
 
 @media only screen and (min-width: 992px) {
   .l-home-skills {
-    .title-section {
-      &:after {
-      }
+    .l-wrapper {
+      padding: $m-padding 0;
     }
     .l-accordion {
       padding: 20px 0;
@@ -198,14 +197,17 @@
   }
 
   .l-latest-projects {
+    padding: 0 30px;
+    max-width: $max-container-width;
+    margin: 0 auto $l-margin;
     .title-section {
-      padding: 0 30px;
+      padding: 0;
       &:after {
-        left: 30px;
+        left: 0;
       }
     }
     .l-home-projects {
-      padding: 0 30px;
+      padding: 0;
       display: grid;
       grid-gap: 15px;
       grid-template-columns: repeat(6, 1fr);
@@ -274,6 +276,12 @@
           height: 200px;
         }
       }
+    }
+  }
+
+  .l-home-testimonials {
+    .l-wrapper {
+      padding: $s-padding 0;
     }
   }
 

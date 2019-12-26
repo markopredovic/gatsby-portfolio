@@ -139,10 +139,23 @@
     }
   }
   .l-post {
+    .l-header {
+      margin-bottom: $m-margin;
+    }
+    .l-img {
+      padding: 0 30px;
+      max-width: $max-container-width;
+      margin: 0 auto $m-margin;
+    }
     .l-content {
       padding: 0 30px;
       max-width: $max-container-width;
       margin: 0 auto;
+    }
+    .l-back {
+      padding: 0 30px;
+      max-width: $max-container-width;
+      margin: $l-margin auto 0;
     }
   }
 }
