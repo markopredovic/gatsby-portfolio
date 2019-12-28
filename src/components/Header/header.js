@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import { useMediaQuery } from "react-responsive"
+import React, { useState } from "react"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { FaBars } from "react-icons/fa"
 
 import SideDrawer from "../SideDrawer"
@@ -9,17 +9,8 @@ import Backdrop from "../UI/Backdrop"
 import Menu from "../UI/Menu"
 
 const Header = ({ siteTitle, mode }) => {
-  // let isMobile = useMediaQuery({
-  //   query: "(max-width: 991px)",
-  // })
-
+  const isMobile = useMediaQuery("(max-width:991px)")
   const [isOpened, setIsOpened] = useState(false)
-  const [isMobile, setIsMobile] = useState(true)
-
-  useEffect(() => {
-    setIsMobile(true)
-    console.log("IS MOBILE", isMobile)
-  }, [])
 
   return (
     <header className={mode}>
