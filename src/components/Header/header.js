@@ -9,14 +9,15 @@ import Backdrop from "../UI/Backdrop"
 import Menu from "../UI/Menu"
 
 const Header = ({ siteTitle, mode }) => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 991px)",
-  })
+  // let isMobile = useMediaQuery({
+  //   query: "(max-width: 991px)",
+  // })
 
   const [isOpened, setIsOpened] = useState(false)
-  // const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
+    setIsMobile(true)
     console.log("IS MOBILE", isMobile)
   }, [])
 
