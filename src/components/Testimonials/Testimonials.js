@@ -2,16 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-import { useMediaQuery } from "react-responsive"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 const Testimonials = ({ layoutCssClass }) => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 767px)",
-  })
+  const isMobile = useMediaQuery("(max-width: 767px)")
 
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 768px)",
-  })
+  const isDesktop = useMediaQuery("(min-width: 768px)")
 
   const data = useStaticQuery(graphql`
     query {

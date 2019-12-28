@@ -4,7 +4,7 @@
 
 1. React responsive carousel: https://www.npmjs.com/package/react-responsive-carousel
 2. React icons: https://react-icons.netlify.com/#/
-3. React responsive: https://www.npmjs.com/package/react-responsive
+3. Material UI useMediaQuery: https://material-ui.com/components/use-media-query/#simple-media-query
 
 ## Help articles
 

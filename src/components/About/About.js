@@ -32,7 +32,8 @@ const About = () => {
         </li>
         <li>React icons: https://react-icons.netlify.com/#/</li>
         <li>
-          React responsive: https://www.npmjs.com/package/react-responsive
+          Material UI useMediaQuery:
+          https://material-ui.com/components/use-media-query/#simple-media-query
         </li>
       </ul>
     </div>

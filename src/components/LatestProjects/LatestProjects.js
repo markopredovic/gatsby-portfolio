@@ -2,12 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-responsive-carousel"
 import PortfolioProject from "../PortfolioProject"
-import { useMediaQuery } from "react-responsive"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 const LatestProjects = ({ layoutCssClass }) => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 991px)",
-  })
+  const isMobile = useMediaQuery("(max-width: 991px)")
   const isDesktop = !isMobile
 
   const data = useStaticQuery(graphql`
