@@ -26,7 +26,5 @@ const IndexPage = () => (
 export default IndexPage
 
 // TODO:
-// 1. Banner images: Wordpress, Vue js
-// 2. add About page: technology used
-// 3. 404 page
-// 4. add content to homepage bottom
+// - 404 page
+// - add more details content to services page
