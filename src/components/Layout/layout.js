@@ -33,7 +33,7 @@ const variants = {
   },
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -43,6 +43,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  console.log("location", location)
 
   const [headerMode, setHeaderMode] = useState("")
 
@@ -67,7 +69,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} mode={headerMode} />
       <AnimatePresence>
         <motion.main
-          key={Math.random(1000)}
+          key={location.pathname}
           variants={variants}
           initial="initial"
           animate="enter"
