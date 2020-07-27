@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/PageTitle"
 
@@ -26,7 +25,7 @@ const ServicesPage = () => {
   const services = data.allContentfulService.edges
 
   return (
-    <Layout>
+    <React.Fragment>
       <SEO title="Services" />
       <div className="l-main-content l-services">
         <PageTitle title="Services" />
@@ -41,7 +40,7 @@ const ServicesPage = () => {
           ))}
         </ul>
       </div>
-    </Layout>
+    </React.Fragment>
   )
 }
 

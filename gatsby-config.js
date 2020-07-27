@@ -10,8 +10,6 @@ contentfulConfig = {
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 }
 
-console.log("[contentfulConfig]", contentfulConfig)
-
 module.exports = {
   siteMetadata: {
     title: "markoni.codes",

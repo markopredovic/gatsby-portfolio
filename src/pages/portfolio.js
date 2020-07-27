@@ -1,17 +1,16 @@
 import React from "react"
-import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/PageTitle"
 import Portfolio from "../components/Portfolio/Portfolio"
 
 const PortfolioPage = () => (
-  <Layout>
+  <React.Fragment>
     <SEO title="Portfolio" />
     <div className="l-main-content l-portfolio">
       <PageTitle title="Portfolio" />
       <Portfolio />
     </div>
-  </Layout>
+  </React.Fragment>
 )
 
 export default PortfolioPage

@@ -1,11 +1,10 @@
 import React from "react"
 
-import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/PageTitle"
 
 const NotFoundPage = () => (
-  <Layout>
+  <React.Fragment>
     <SEO title="404: Not found" />
     <PageTitle title="Not Found" />
     <div className="l-404">
@@ -13,7 +12,7 @@ const NotFoundPage = () => (
         <p>You just hit a route that doesn&#39;t exist...</p>
       </div>
     </div>
-  </Layout>
+  </React.Fragment>
 )
 
 export default NotFoundPage

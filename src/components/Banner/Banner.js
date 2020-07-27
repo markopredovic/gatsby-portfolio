@@ -55,6 +55,10 @@ const Banner = ({ layoutCssClass }) => {
   })
 
   const options = {
+    autoPlay: true,
+    interval: 3000,
+    infiniteLoop: true,
+    stopOnHover: true,
     showArrows: false,
     showThumbs: false,
     showStatus: false,
