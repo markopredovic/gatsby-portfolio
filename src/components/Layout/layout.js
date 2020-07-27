@@ -67,6 +67,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} mode={headerMode} />
       <AnimatePresence>
         <motion.main
+          key={Math.random(1000)}
           variants={variants}
           initial="initial"
           animate="enter"
