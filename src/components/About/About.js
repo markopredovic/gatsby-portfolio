@@ -23,6 +23,10 @@ const About = () => {
         Netlify for deploying website, using netlify forms for implementing
         contact form.
       </p>
+      <p>
+        Page transition with{" "}
+        <a href="https://www.framer.com/motion/">framer motion</a>
+      </p>
       <h3>React 3rd-party plugins using on website:</h3>
 
       <ul>
