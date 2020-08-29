@@ -1,4 +1,5 @@
 import React from "react"
+import Img from 'gatsby-image'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { useStaticQuery, graphql } from "gatsby"
@@ -14,10 +15,16 @@ const Banner = ({ layoutCssClass }) => {
               file {
                 url
               }
+              fluid {
+                ...GatsbyContentfulFluid
+              }
             }
             mobileImage {
               file {
                 url
+              }
+              fluid {
+                ...GatsbyContentfulFluid
               }
             }
             description
@@ -28,23 +35,17 @@ const Banner = ({ layoutCssClass }) => {
   `)
 
   const banners = data.allContentfulBannerSlider.edges.map((banner, index) => {
+    const sources = [
+      banner.node.mobileImage.fluid,
+      {
+        ...banner.node.desktopImage.fluid,
+        media: `(min-width: 768px)`
+      }
+    ]
     return (
       <div key={index} className="m-banner-slide">
         <div className="l-img">
-          <picture>
-            <source
-              media="(max-width: 767px)"
-              srcSet={banner.node.mobileImage.file.url}
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet={banner.node.desktopImage.file.url}
-            />
-            <img
-              src={banner.node.desktopImage.file.url}
-              alt={banner.node.title}
-            />
-          </picture>
+        <Img fluid={sources} />
         </div>
         <div className="l-banner-content">
           <h3>{banner.node.title}</h3>
