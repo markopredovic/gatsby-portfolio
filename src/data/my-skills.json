@@ -4,7 +4,7 @@
         "PHP", "MySql", "linux", "git"
     ],
     "Library and frameworks": [
-        "React js", "Node js", "Vue js", "Express js", "Redux", "PWA", "Gatsby js", "GraphQL", "Next js", "Material UI"
+        "React js", "Gatsby js", "Next js", "Node js", "Redux", "Styled components", "Vue js", "Express js", "PWA", "GraphQL", "Material UI"
     ],
     "CMS and tools": [
         "Magento", "Strapi", "WordPress", "Contentful", "Netlify", "Webpack", "Heroku", "Prisma"
