@@ -88,6 +88,10 @@
         object-fit: cover;
         object-position: center;
       }
+
+      .gatsby-image-wrapper > div {
+        padding-bottom: 80% !important;
+      }
     }
     .l-content {
       position: absolute;

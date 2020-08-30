@@ -33,7 +33,7 @@ const variants = {
   },
 }
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, bodyClass }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -44,11 +44,11 @@ const Layout = ({ children, location }) => {
     }
   `)
 
-  console.log("location", location)
+  console.log("bodyClass", bodyClass)
 
   const [headerMode, setHeaderMode] = useState("")
 
-  const handleScroll = evt => {
+  const handleScroll = (evt) => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
     if (scrollTop > 10) {
@@ -74,6 +74,7 @@ const Layout = ({ children, location }) => {
           initial="initial"
           animate="enter"
           exit="exit"
+          className={bodyClass ? bodyClass : null}
         >
           {children}
         </motion.main>

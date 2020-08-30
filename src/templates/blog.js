@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/Layout/layout"
@@ -11,8 +12,8 @@ export const query = graphql`
       title
       subtitle
       featuredImage {
-        file {
-          url
+        fluid(quality: 9) {
+          ...GatsbyContentfulFluid
         }
       }
       publishedDate(formatString: "MMMM Do, YYYY")
@@ -23,10 +24,10 @@ export const query = graphql`
   }
 `
 
-const blog = props => {
+const blog = (props) => {
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const alt = node.data.target.fields.title["en-US"]
         const url = node.data.target.fields.file["en-US"].url
 
@@ -36,7 +37,7 @@ const blog = props => {
   }
 
   return (
-    <Layout>
+    <Layout bodyClass={props.pageContext.bodyClass}>
       <div className="l-main-content l-post">
         <div className="l-header">
           <h3 className="m-post-title">
@@ -47,8 +48,8 @@ const blog = props => {
           </h4>
         </div>
         <div className="l-img">
-          <img
-            src={props.data.contentfulBlogPost.featuredImage.file.url}
+          <Img
+            fluid={props.data.contentfulBlogPost.featuredImage.fluid}
             alt={props.data.contentfulBlogPost.title}
           />
         </div>

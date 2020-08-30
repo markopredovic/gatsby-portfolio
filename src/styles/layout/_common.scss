@@ -41,6 +41,10 @@ p {
 
 main {
   padding: $l-padding 0;
+
+  &.post-page {
+    padding-top: 0;
+  }
 }
 
 @media only screen and (min-width: 768px) {

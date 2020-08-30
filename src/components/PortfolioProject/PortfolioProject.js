@@ -1,11 +1,12 @@
 import React from "react"
+import Img from "gatsby-image"
 
 const PortfolioProject = ({ node, showDescription, index }) => {
   return (
     <div className={`l-portfolio-project portfolio-project-${index}`}>
       <div className="l-img">
         <a href={node.liveUrl} target="_blank" rel="noopener noreferrer">
-          <img src={node.projectImage.file.url} alt={node.title} />
+          <Img fluid={node.projectImage.fluid} alt={node.title} />
         </a>
       </div>
       <div className="l-content">

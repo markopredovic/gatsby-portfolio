@@ -21,8 +21,8 @@ const Portfolio = () => {
               description
             }
             projectImage {
-              file {
-                url
+              fluid(quality: 9) {
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -32,7 +32,7 @@ const Portfolio = () => {
   `)
 
   const projects = data.allContentfulPortfolio.edges
-    .filter(project => {
+    .filter((project) => {
       if (activeProjectType === null || activeProjectType === "All")
         return project
       else if (activeProjectType === "Other") {

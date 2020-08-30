@@ -26,6 +26,9 @@ const LatestProjects = ({ layoutCssClass }) => {
               file {
                 url
               }
+              fluid(quality: 9) {
+                ...GatsbyContentfulFluid
+              }
             }
           }
         }
@@ -45,6 +48,9 @@ const LatestProjects = ({ layoutCssClass }) => {
             projectImage {
               file {
                 url
+              }
+              fluid(quality: 9) {
+                ...GatsbyContentfulFluid
               }
             }
           }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import PageTitle from "../components/PageTitle"
 
 const Blog = () => {
@@ -12,8 +13,8 @@ const Blog = () => {
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
             featuredImage {
-              file {
-                url
+              fluid(quality: 9) {
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -29,14 +30,14 @@ const Blog = () => {
       <PageTitle title="Blog" />
       <div className="l-content">
         <ul>
-          {blogPosts.map(post => {
+          {blogPosts.map((post) => {
             return (
               <li key={post.node.slug}>
                 <div className="post-item">
                   <div className="l-img">
                     <Link to={`/blog/${post.node.slug}`}>
-                      <img
-                        src={post.node.featuredImage.file.url}
+                      <Img
+                        fluid={post.node.featuredImage.fluid}
                         alt={post.node.title}
                       />
                     </Link>

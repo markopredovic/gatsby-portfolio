@@ -12,17 +12,11 @@ const Banner = ({ layoutCssClass }) => {
           node {
             title
             desktopImage {
-              file {
-                url
-              }
               fluid {
                 ...GatsbyContentfulFluid
               }
             }
             mobileImage {
-              file {
-                url
-              }
               fluid {
                 ...GatsbyContentfulFluid
               }
