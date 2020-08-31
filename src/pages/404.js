@@ -1,7 +1,8 @@
 import React from "react"
+import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
-import PageTitle from "../components/PageTitle"
+const PageTitle = loadable(() => import("../components/PageTitle"))
 
 const NotFoundPage = () => (
   <React.Fragment>

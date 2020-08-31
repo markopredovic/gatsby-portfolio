@@ -1,7 +1,9 @@
 import React from "react"
+import loadable from "@loadable/component"
+
 import SEO from "../components/seo"
-import PageTitle from "../components/PageTitle"
-import ThankYou from "../components/ThankYou"
+const PageTitle = loadable(() => import("../components/PageTitle"))
+const ThankYou = loadable(() => import("../components/ThankYou"))
 
 const SuccessPage = () => (
   <React.Fragment>

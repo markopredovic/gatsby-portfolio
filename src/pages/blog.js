@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import loadable from "@loadable/component"
+
 import Img from "gatsby-image"
-import PageTitle from "../components/PageTitle"
+const PageTitle = loadable(() => import("../components/PageTitle"))
 
 const Blog = () => {
   const data = useStaticQuery(graphql`

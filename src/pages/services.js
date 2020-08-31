@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
-import PageTitle from "../components/PageTitle"
+const PageTitle = loadable(() => import("../components/PageTitle"))
 
 const ServicesPage = () => {
   const data = useStaticQuery(graphql`
