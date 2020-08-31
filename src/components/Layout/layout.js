@@ -11,7 +11,6 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import Header from "../Header"
 import Footer from "../Footer"
-import "../../styles/styles.scss"
 
 const duration = 0.5
 

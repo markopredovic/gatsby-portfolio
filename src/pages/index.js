@@ -1,23 +1,20 @@
 import React from "react"
+import loadable from "@loadable/component"
 import SEO from "../components/seo"
-import Banner from "../components/Banner"
-import MySkills from "../components/MySkills"
-import LatestProjects from "../components/LatestProjects"
-import Testimonials from "../components/Testimonials"
-import AboutMe from "../components/AboutMe"
+
+const Banner = loadable(() => import("../components/Banner"))
+const MySkills = loadable(() => import("../components/MySkills"))
+const LatestProjects = loadable(() => import("../components/LatestProjects"))
+const Testimonials = loadable(() => import("../components/Testimonials"))
+const AboutMe = loadable(() => import("../components/AboutMe"))
 
 const IndexPage = () => (
   <React.Fragment>
     <SEO title="Home" />
-    {/* banner: */}
     <Banner layoutCssClass="l-home-banner" />
-    {/* my skils: */}
     <MySkills layoutCssClass="l-home-skills" />
-    {/* latest projects: */}
     <LatestProjects layoutCssClass="l-latest-projects" />
-    {/* testimonials: */}
     <Testimonials layoutCssClass="l-home-testimonials" />
-    {/* about me: */}
     <AboutMe />
   </React.Fragment>
 )
