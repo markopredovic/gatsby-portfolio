@@ -25,7 +25,6 @@ const Header = ({ siteTitle, mode }) => {
           </h1>
         </div>
         <div className="l-menu l-hide-mobile">
-          <p style={{ fontSize: "10rem" }}>Hello world</p>
           <Menu />
         </div>
       </div>
