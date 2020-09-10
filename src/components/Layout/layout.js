@@ -43,8 +43,6 @@ const Layout = ({ children, location, bodyClass }) => {
     }
   `)
 
-  console.log("bodyClass", bodyClass)
-
   const [headerMode, setHeaderMode] = useState("")
 
   const handleScroll = (evt) => {

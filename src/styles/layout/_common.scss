@@ -38,12 +38,24 @@ p {
 .l-container {
   padding: 0 10px;
 }
+.l-hide-desktop {
+  display: block;
+}
+.l-hide-mobile {
+  display: block;
+}
 
 main {
   padding: $l-padding 0;
+  min-height: 80vh;
 
   &.post-page {
     padding-top: 0;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .l-hide-mobile {
+    display: none;
   }
 }
 
@@ -74,6 +86,9 @@ main {
   }
   a {
     font-size: 1.8rem;
+  }
+  .l-hide-desktop {
+    display: none;
   }
   .l-container {
     padding: 0 30px;

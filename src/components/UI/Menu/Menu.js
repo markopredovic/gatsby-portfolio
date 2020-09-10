@@ -1,11 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Menu = () => {
+const Menu = ({ closeSideDrawer }) => {
+  const handleClose = (e) => {
+    setTimeout(closeSideDrawer, 300)
+  }
+
   return (
     <div className="m-menu">
       <nav>
-        <ul>
+        <ul onClick={handleClose}>
           <li>
             <Link to="/" activeClassName="is-active-link">
               Home
