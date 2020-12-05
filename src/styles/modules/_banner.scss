@@ -6,9 +6,9 @@
     .l-img {
       position: relative;
 
-       .gatsby-image-wrapper > div{
+      .gatsby-image-wrapper > div {
         padding-bottom: 80% !important;
-       }
+      }
     }
 
     .l-banner-content {
@@ -34,24 +34,89 @@
 
 @media only screen and (min-width: 768px) {
   .m-banner {
-    .m-banner-slide .l-img .gatsby-image-wrapper > div {
-      padding-bottom: 40% !important;
+    .m-banner-slide {
+      .l-img {
+        .gatsby-image-wrapper > div {
+          padding-bottom: 40% !important;
+        }
+      }
+
+      .l-banner-content {
+        bottom: auto;
+        top: 50%;
+        width: 40%;
+        left: 50%;
+        transform: translate(0, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+
+        h3 {
+          display: block;
+          padding: 0;
+          margin-bottom: 1.5rem;
+          background-color: transparent;
+          color: #fff;
+        }
+        p {
+          display: block;
+          font-weight: 600;
+        }
+      }
     }
   }
 }
 
 @media only screen and (min-width: 992px) {
   .m-banner {
-    .m-banner-slide .l-img .gatsby-image-wrapper > div {
-      padding-bottom: 38% !important;
+    .m-banner-slide {
+      .l-img {
+        .gatsby-image-wrapper > div {
+          padding-bottom: 38% !important;
+        }
+      }
+
+      .l-banner-content {
+        h3 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 1.9rem;
+        }
+      }
     }
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .m-banner {
-    .m-banner-slide .l-img .gatsby-image-wrapper > div {
-      padding-bottom: 35% !important;
+    .m-banner-slide {
+      .l-img {
+        .gatsby-image-wrapper > div {
+          padding-bottom: 35% !important;
+        }
+      }
+
+      .l-banner-content {
+        top: auto;
+        bottom: 50px;
+        width: 40%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 3rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+
+        h3 {
+          font-size: 3.2rem;
+        }
+        p {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { useStaticQuery, graphql } from "gatsby"
@@ -33,13 +33,13 @@ const Banner = ({ layoutCssClass }) => {
       banner.node.mobileImage.fluid,
       {
         ...banner.node.desktopImage.fluid,
-        media: `(min-width: 768px)`
-      }
+        media: `(min-width: 768px)`,
+      },
     ]
     return (
       <div key={index} className="m-banner-slide">
         <div className="l-img">
-        <Img fluid={sources} />
+          <Img fluid={sources} />
         </div>
         <div className="l-banner-content">
           <h3>{banner.node.title}</h3>
@@ -51,7 +51,7 @@ const Banner = ({ layoutCssClass }) => {
 
   const options = {
     autoPlay: true,
-    interval: 3000,
+    interval: 8000,
     infiniteLoop: true,
     stopOnHover: true,
     showArrows: false,

@@ -8,9 +8,11 @@ const ContactForm = () => {
   const [message, setMessage] = useState("")
   const [errors, setErrors] = useState({})
 
-  const encode = data => {
+  const encode = (data) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
       .join("&")
   }
 
@@ -29,7 +31,7 @@ const ContactForm = () => {
     return errors
   }
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault()
     const errors = validate()
 
@@ -47,7 +49,7 @@ const ContactForm = () => {
         .then(() => {
           navigate("/thank-you/")
         })
-        .catch(e => {
+        .catch((e) => {
           navigate("/error/")
         })
     }
@@ -55,6 +57,10 @@ const ContactForm = () => {
 
   return (
     <div className="l-contact-form">
+      <div style={{ marginBottom: "3rem" }}>
+        <p className={styles.intro}>Hire me on upwork:</p>
+        <a href="https://www.upwork.com/fl/markopredovic">Upwork profile</a>
+      </div>
       <div className={styles.contact_form}>
         <p className={styles.intro}>Send me email</p>
         <form
@@ -73,7 +79,7 @@ const ContactForm = () => {
               <input
                 type="text"
                 name="contact-name"
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 style={errors && errors.name && { border: "1px solid #c3073f" }}
               />
               {errors && errors.name && (
@@ -85,7 +91,7 @@ const ContactForm = () => {
               <input
                 type="email"
                 name="contact-email"
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -97,7 +103,7 @@ const ContactForm = () => {
               </label>
               <textarea
                 name="contact-message"
-                onChange={e => setMessage(e.target.value)}
+                onChange={(e) => setMessage(e.target.value)}
                 style={errors && errors.message && { borderColor: "#c3073f" }}
               />
               {errors && errors.message && (

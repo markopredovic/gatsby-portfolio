@@ -12,7 +12,7 @@ contentfulConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: "markoni.codes",
+    title: "markoni512",
     description: "Portfolio website",
     author: "Marko Predovic",
   },
