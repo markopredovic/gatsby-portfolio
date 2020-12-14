@@ -57,10 +57,6 @@ const ContactForm = () => {
 
   return (
     <div className="l-contact-form">
-      <div style={{ marginBottom: "3rem" }}>
-        <p className={styles.intro}>Hire me on upwork:</p>
-        <a href="https://www.upwork.com/fl/markopredovic">Upwork profile</a>
-      </div>
       <div className={styles.contact_form}>
         <p className={styles.intro}>Send me email</p>
         <form
