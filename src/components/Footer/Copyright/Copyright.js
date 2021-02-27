@@ -1,10 +1,13 @@
+import { Box, Paragraph } from "grommet"
 import React from "react"
 
 const Copyright = () => {
   return (
-    <div className="l-copyright">
-      Copyright &copy; {new Date().getFullYear()} by markoni512.dev
-    </div>
+    <Box>
+      <Paragraph margin="0">
+        Copyright &copy; {new Date().getFullYear()} by markoni512.dev
+      </Paragraph>
+    </Box>
   )
 }
 

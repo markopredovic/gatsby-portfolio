@@ -6,6 +6,7 @@
  */
 import React, { Fragment, useState, useEffect } from "react"
 import PropTypes from "prop-types"
+import { Grommet } from "grommet"
 import { useStaticQuery, graphql } from "gatsby"
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -62,7 +63,7 @@ const Layout = ({ children, location, bodyClass }) => {
   }, [])
 
   return (
-    <Fragment>
+    <Grommet>
       <Header siteTitle={data.site.siteMetadata.title} mode={headerMode} />
       <AnimatePresence>
         <motion.main
@@ -77,7 +78,7 @@ const Layout = ({ children, location, bodyClass }) => {
         </motion.main>
       </AnimatePresence>
       <Footer />
-    </Fragment>
+    </Grommet>
   )
 }
 

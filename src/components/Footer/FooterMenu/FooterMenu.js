@@ -1,12 +1,13 @@
-import React from 'react';
-import Menu from "../../UI/Menu";
+import React from "react"
+import { Box } from "grommet"
+import Menu from "../../UI/Menu"
 
 const FooterMenu = () => {
-  return(
-    <div className="l-footer-menu">
+  return (
+    <Box>
       <Menu />
-    </div>
+    </Box>
   )
 }
 
-export default FooterMenu;
+export default FooterMenu

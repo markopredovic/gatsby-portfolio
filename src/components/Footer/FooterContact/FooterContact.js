@@ -1,12 +1,13 @@
-import React from 'react';
-import Contact from '../../Contact'
+import React from "react"
+import { Box } from "grommet"
+import Contact from "../../Contact"
 
 const FooterContact = () => {
-  return(
-    <div className="l-footer-contact">
+  return (
+    <Box>
       <Contact />
-    </div>
+    </Box>
   )
 }
 
-export default FooterContact;
+export default FooterContact

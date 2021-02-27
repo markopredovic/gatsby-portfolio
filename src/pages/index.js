@@ -1,6 +1,7 @@
 import React from "react"
 import loadable from "@loadable/component"
 import SEO from "../components/seo"
+import { Box } from "grommet"
 
 const Banner = loadable(() => import("../components/Banner"))
 const MySkills = loadable(() => import("../components/MySkills"))
@@ -9,14 +10,14 @@ const Testimonials = loadable(() => import("../components/Testimonials"))
 const AboutMe = loadable(() => import("../components/AboutMe"))
 
 const IndexPage = () => (
-  <React.Fragment>
+  <Box>
     <SEO title="Home" />
-    <Banner layoutCssClass="l-home-banner" />
-    <MySkills layoutCssClass="l-home-skills" />
+    <Banner />
+    <MySkills />
     <LatestProjects layoutCssClass="l-latest-projects" />
-    <Testimonials layoutCssClass="l-home-testimonials" />
+    <Testimonials />
     <AboutMe />
-  </React.Fragment>
+  </Box>
 )
 
 export default IndexPage

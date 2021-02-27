@@ -1,13 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 
-const Testimonials = ({ layoutCssClass }) => {
-  const isMobile = useMediaQuery("(max-width: 767px)")
+import { Box, Paragraph, ResponsiveContext, defaultProps } from "grommet"
+import Container from "../UI/Container"
+import Title from "../Modules/Title"
 
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+const Testimonials = () => {
+  const size = useContext(ResponsiveContext)
+
+  const isMobile = size === "small"
+
+  const isDesktop = !isMobile
 
   const data = useStaticQuery(graphql`
     query {
@@ -26,10 +32,10 @@ const Testimonials = ({ layoutCssClass }) => {
 
   const testimonials = data.allContentfulTestimonial.edges.map(
     (testimonial, index) => (
-      <div key={index} className="l-testimonial m-testimonial">
-        <p>{testimonial.node.description.description}</p>
+      <TestimonialBox key={index} background="brand">
+        <Paragraph>{testimonial.node.description.description}</Paragraph>
         <span>{testimonial.node.author}</span>
-      </div>
+      </TestimonialBox>
     )
   )
 
@@ -56,18 +62,36 @@ const Testimonials = ({ layoutCssClass }) => {
   }
 
   return (
-    <div className={layoutCssClass}>
-      <div className="l-container">
-        <h3 className="title-section">My clients said ...</h3>
-      </div>
-      <div className="l-wrapper">
-        <div className="l-container">
+    <Box margin={{ bottom: "60px" }}>
+      <Container>
+        <Title section margin={{ bottom: "30px" }}>
+          My clients said ...
+        </Title>
+      </Container>
+      <TestimonialsBox background="brand">
+        <Container>
           {isMobile && <Carousel {...optionsMobile}>{testimonials}</Carousel>}
           {isDesktop && <Carousel {...optionsDesktop}>{testimonials}</Carousel>}
-        </div>
-      </div>
-    </div>
+        </Container>
+      </TestimonialsBox>
+    </Box>
   )
 }
 
 export default Testimonials
+
+const TestimonialsBox = styled(Box)`
+  .carousel .slide {
+    background-color: ${defaultProps.theme.global.colors.brand};
+  }
+`
+
+const TestimonialBox = styled(Box)`
+  padding: 20px 20px 40px;
+  p {
+    max-width: 100%;
+  }
+  span {
+    color: ${defaultProps.theme.global.colors["accent-2"]};
+  }
+`

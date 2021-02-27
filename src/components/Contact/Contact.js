@@ -1,13 +1,14 @@
+import { Box, Paragraph } from "grommet"
 import React from "react"
 import { FaEnvelope } from "react-icons/fa"
 
 const Contact = () => {
   return (
-    <div className="l-contact">
-      <p>
+    <Box>
+      <Paragraph>
         <FaEnvelope /> mpredovic@gmail.com
-      </p>
-    </div>
+      </Paragraph>
+    </Box>
   )
 }
 

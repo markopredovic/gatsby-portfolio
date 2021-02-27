@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
 import Img from "gatsby-image"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from "react-responsive-carousel"
+import styled from "styled-components"
+import { Box, Carousel, Paragraph, Heading, ResponsiveContext } from "grommet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Banner = ({ layoutCssClass }) => {
+const Banner = () => {
   const data = useStaticQuery(graphql`
     {
       allContentfulBannerSlider(sort: { fields: position, order: ASC }) {
@@ -28,6 +28,9 @@ const Banner = ({ layoutCssClass }) => {
     }
   `)
 
+  const size = useContext(ResponsiveContext)
+  const isMobile = size === "small"
+
   const banners = data.allContentfulBannerSlider.edges.map((banner, index) => {
     const sources = [
       banner.node.mobileImage.fluid,
@@ -37,36 +40,103 @@ const Banner = ({ layoutCssClass }) => {
       },
     ]
     return (
-      <div key={index} className="m-banner-slide">
-        <div className="l-img">
+      <BannerBox key={index}>
+        <ImageBox>
           <Img fluid={sources} />
-        </div>
-        <div className="l-banner-content">
-          <h3>{banner.node.title}</h3>
-          <p>{banner.node.description}</p>
-        </div>
-      </div>
+        </ImageBox>
+        <ContentBox>
+          <Box>
+            <Heading level="3">{banner.node.title}</Heading>
+            {!isMobile && <Paragraph>{banner.node.description}</Paragraph>}
+          </Box>
+        </ContentBox>
+      </BannerBox>
     )
   })
 
-  const options = {
-    autoPlay: true,
-    interval: 8000,
-    infiniteLoop: true,
-    stopOnHover: true,
-    showArrows: false,
-    showThumbs: false,
-    showStatus: false,
-    onClickItem: () => {},
-  }
-
   return (
-    <div className={layoutCssClass}>
-      <div className="m-banner">
-        <Carousel {...options}>{banners}</Carousel>
-      </div>
-    </div>
+    <Box margin={{ bottom: "60px" }}>
+      <Carousel fill controls={true}>
+        {banners}
+      </Carousel>
+    </Box>
   )
 }
 
 export default Banner
+
+const BannerBox = styled(Box)`
+  position: relative;
+`
+
+const ImageBox = styled(Box)`
+  height: 400px;
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+
+  @media (min-width: 992px) {
+    height: 350px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 400px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 450px;
+  }
+
+  @media (min-width: 1700px) {
+    height: 500px;
+  }
+`
+
+const ContentBox = styled(Box)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 10% 50px;
+  justify-content: flex-end;
+  > div {
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  h3 {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+  p {
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 10%;
+    justify-content: center;
+    align-items: flex-end;
+    > div {
+      width: 50%;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding-bottom: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    > div {
+      width: 50%;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+`

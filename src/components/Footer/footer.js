@@ -1,18 +1,19 @@
 import React from "react"
+import { Footer } from "grommet"
+import Container from "../UI/Container"
 import FooterMenu from "./FooterMenu"
 import FooterContact from "./FooterContact"
 import Copyright from "./Copyright"
-// import BackToTop from "../BackToTop/BackToTop"
 
 const footer = () => {
   return (
-    <footer className="l-footer m-footer">
-      <div className="l-container">
+    <Footer pad="40px 0" background="dark-1">
+      <Container>
         <FooterMenu />
         <FooterContact />
         <Copyright />
-      </div>
-    </footer>
+      </Container>
+    </Footer>
   )
 }
 
