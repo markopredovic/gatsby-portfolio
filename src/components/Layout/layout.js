@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-import React, { Fragment, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Grommet } from "grommet"
 import { useStaticQuery, graphql } from "gatsby"

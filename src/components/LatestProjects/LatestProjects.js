@@ -74,7 +74,7 @@ const LatestProjects = () => {
     : data.desktopPortfolioProjects
 
   projects = projects.edges.map((project, index) => (
-    <PortfolioProjectBox>
+    <PortfolioProjectBox key={index}>
       <ImageBox>
         <Img fluid={project.node.projectImage.fluid} />
       </ImageBox>
@@ -94,7 +94,7 @@ const LatestProjects = () => {
           Latest Projects
         </Title>
         {isMobile && (
-          <Carousel fill controls={false} play="2000">
+          <Carousel fill controls={false} play={2000}>
             {projects}
           </Carousel>
         )}

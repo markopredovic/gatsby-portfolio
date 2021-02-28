@@ -14,7 +14,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Banner />
     <MySkills />
-    <LatestProjects layoutCssClass="l-latest-projects" />
+    <LatestProjects />
     <Testimonials />
     <AboutMe />
   </Box>

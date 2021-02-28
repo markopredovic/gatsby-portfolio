@@ -1,3 +1,3 @@
-import Menu from './Menu'
+import SiteMenu from "./Menu"
 
-export default Menu
+export default SiteMenu

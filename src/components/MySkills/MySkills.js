@@ -21,19 +21,24 @@ const MySkills = () => {
       return size === "small" ? (
         <MyAccordionPanel key={index} label={item}>
           <Box>
-            {json[item].map((skill) => (
-              <Box as="span" pad={{ vertical: "3px" }} direction="row">
+            {json[item].map((skill, ind) => (
+              <Box
+                as="span"
+                key={ind}
+                pad={{ vertical: "3px" }}
+                direction="row"
+              >
                 <FormCheckmark /> {skill}
               </Box>
             ))}
           </Box>
         </MyAccordionPanel>
       ) : (
-        <DesktopBoxItem>
+        <DesktopBoxItem key={index}>
           <Heading level="4">{item}</Heading>
           <Box>
-            {json[item].map((skill) => (
-              <Box direction="row">
+            {json[item].map((skill, index) => (
+              <Box key={index} direction="row">
                 <FormCheckmark />
                 {skill}
               </Box>
