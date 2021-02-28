@@ -8,39 +8,68 @@ import {
   defaultProps,
 } from "grommet"
 import React, { useContext, useState, useEffect } from "react"
-import { Menu as MenuIcon, Close as CloseIcon } from "grommet-icons"
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  Mail,
+  Github,
+} from "grommet-icons"
 import SiteMenu from "../UI/Menu"
 import styled from "styled-components"
 
 const MyHeader = ({ siteTitle }) => {
   const [isOpened, setIsOpened] = useState(false)
+  const [tBackground, setTBackground] = useState("white")
 
   const size = useContext(ResponsiveContext)
   const isMobile = size === "small"
 
   const toggleDrawer = () => setIsOpened(!isOpened)
 
+  const toggleHeaderBackground = () => {
+    let scrollY = window.scrollY
+
+    if (scrollY >= 200) {
+      setTBackground("dark")
+    } else {
+      setTBackground("white")
+    }
+  }
+
   useEffect(() => {
-    console.log("page ready")
+    document.addEventListener("scroll", toggleHeaderBackground)
+
+    return () => {
+      document.removeEventListener("scroll", toggleHeaderBackground)
+    }
   }, [])
 
   return (
-    <FixedHeader>
+    <FixedHeader tBackground={tBackground}>
       {isMobile && (
         <Button
           onClick={toggleDrawer}
-          icon={<MenuIconLarge />}
+          icon={<MenuIconLarge tBackground={tBackground} />}
           hoverIndicator
         />
       )}
-      <Logo>
+      <Logo tBackground={tBackground}>
         <Link to="/">{siteTitle}</Link>
       </Logo>
       {!isMobile && (
-        <HeaderMenu>
+        <HeaderMenu tBackground={tBackground}>
           <SiteMenu />
         </HeaderMenu>
       )}
+      <Backdrop
+        isOpened={isOpened}
+        animation={{
+          type: "fadeIn",
+          delay: 300,
+          duration: 500,
+        }}
+        onClick={toggleDrawer}
+      />
       <SideDrawer isOpened={isOpened}>
         <Box justify="end" direction="row" margin={{ bottom: "20px" }}>
           <Button
@@ -50,6 +79,16 @@ const MyHeader = ({ siteTitle }) => {
           />
         </Box>
         <SiteMenu />
+        <HeaderContacts>
+          <ul>
+            <li>
+              <Mail /> <span>mpredovic@gmail.com</span>
+            </li>
+            <li>
+              <Github /> <span>markopredovic</span>
+            </li>
+          </ul>
+        </HeaderContacts>
       </SideDrawer>
     </FixedHeader>
   )
@@ -64,7 +103,9 @@ const FixedHeader = styled(Header)`
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #fff;
+  background-color: ${(props) =>
+    props.tBackground === "white" ? "#fff" : "#000"};
+  transition: background-color 0.5s linear;
 
   @media (min-width: 770px) {
     padding: 0 20px;
@@ -75,6 +116,9 @@ const FixedHeader = styled(Header)`
   @media (min-width: 1024px) {
     height: 80px;
   }
+  @media (min-width: 1200px) {
+    padding: 0 calc(50% - 580px);
+  }
 `
 
 const Logo = styled(Heading)`
@@ -84,7 +128,10 @@ const Logo = styled(Heading)`
   transform: translate(-50%, -50%);
   margin-bottom: 0;
   a {
-    color: ${defaultProps.theme.global.colors.brand};
+    color: ${(props) =>
+      props.tBackground === "white"
+        ? defaultProps.theme.global.colors.brand
+        : defaultProps.theme.global.colors["light-1"]};
   }
 
   @media (min-width: 770px) {
@@ -100,6 +147,11 @@ const Logo = styled(Heading)`
 const MenuIconLarge = styled(MenuIcon)`
   width: 36px;
   height: 36px;
+
+  stroke: ${(props) =>
+    props.tBackground === "white"
+      ? defaultProps.theme.global.colors["dark-1"]
+      : defaultProps.theme.global.colors["light-1"]};
 `
 const CloseIconLarge = styled(CloseIcon)`
   width: 36px;
@@ -128,9 +180,15 @@ const HeaderMenu = styled(Box)`
           margin: 0 0 0 20px;
         }
         a {
-          color: ${defaultProps.theme.global.colors["neutral-1"]};
+          color: ${(props) =>
+            props.tBackground === "white"
+              ? defaultProps.theme.global.colors["neutral-1"]
+              : defaultProps.theme.global.colors["light-3"]};
           &:hover {
-            color: ${defaultProps.theme.global.colors["neutral-2"]};
+            color: ${(props) =>
+              props.tBackground === "white"
+                ? defaultProps.theme.global.colors["neutral-2"]
+                : defaultProps.theme.global.colors["light-4"]};
           }
         }
       }
@@ -147,7 +205,7 @@ const SideDrawer = styled(Box)`
   max-width: 350px;
   height: 100vh;
   background-color: #fff;
-  transition: left 0.5s ease-in-out;
+  transition: left 0.5s linear;
 
   nav {
     ul {
@@ -173,4 +231,35 @@ const SideDrawer = styled(Box)`
       }
     }
   }
+`
+
+const HeaderContacts = styled(Box)`
+  margin-top: auto;
+  padding: 0 20px 20px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+`
+
+const Backdrop = styled(Box)`
+  display: ${(props) => (props.isOpened ? "block" : "none")};
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s linear;
 `
