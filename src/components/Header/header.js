@@ -45,19 +45,19 @@ const MyHeader = ({ siteTitle }) => {
   }, [])
 
   return (
-    <FixedHeader tBackground={tBackground}>
+    <FixedHeader tbackground={tBackground}>
       {isMobile && (
         <Button
           onClick={toggleDrawer}
-          icon={<MenuIconLarge tBackground={tBackground} />}
+          icon={<MenuIconLarge tbackground={tBackground} />}
           hoverIndicator
         />
       )}
-      <Logo tBackground={tBackground}>
+      <Logo tbackground={tBackground}>
         <Link to="/">{siteTitle}</Link>
       </Logo>
       {!isMobile && (
-        <HeaderMenu tBackground={tBackground}>
+        <HeaderMenu tbackground={tBackground}>
           <SiteMenu />
         </HeaderMenu>
       )}
@@ -104,7 +104,7 @@ const FixedHeader = styled(Header)`
   width: 100%;
   height: 60px;
   background-color: ${(props) =>
-    props.tBackground === "white" ? "#fff" : "#000"};
+    props.tbackground === "white" ? "#fff" : "#000"};
   transition: background-color 0.5s linear;
 
   @media (min-width: 770px) {
@@ -129,7 +129,7 @@ const Logo = styled(Heading)`
   margin-bottom: 0;
   a {
     color: ${(props) =>
-      props.tBackground === "white"
+      props.tbackground === "white"
         ? defaultProps.theme.global.colors.brand
         : defaultProps.theme.global.colors["light-1"]};
   }
@@ -149,7 +149,7 @@ const MenuIconLarge = styled(MenuIcon)`
   height: 36px;
 
   stroke: ${(props) =>
-    props.tBackground === "white"
+    props.tbackground === "white"
       ? defaultProps.theme.global.colors["dark-1"]
       : defaultProps.theme.global.colors["light-1"]};
 `
@@ -181,12 +181,12 @@ const HeaderMenu = styled(Box)`
         }
         a {
           color: ${(props) =>
-            props.tBackground === "white"
+            props.tbackground === "white"
               ? defaultProps.theme.global.colors["neutral-1"]
               : defaultProps.theme.global.colors["light-3"]};
           &:hover {
             color: ${(props) =>
-              props.tBackground === "white"
+              props.tbackground === "white"
                 ? defaultProps.theme.global.colors["neutral-2"]
                 : defaultProps.theme.global.colors["light-4"]};
           }
