@@ -1,16 +1,22 @@
 import React from "react"
-import loadable from "@loadable/component"
-
 import SEO from "../components/seo"
-const PageTitle = loadable(() => import("../components/PageTitle"))
+import { Box, Paragraph } from "grommet"
+import Container from "../components/UI/Container"
+import Title from "../components/Modules/Title"
 
 const ErrorPage = () => (
   <React.Fragment>
     <SEO title="Contact" />
-    <div className="l-main-content l-error-page">
-      <PageTitle title="Error" />
-      <p>Something went wrong</p>
-    </div>
+    <Box>
+      <Title page fill={true}>
+        Error
+      </Title>
+      <Box pad={{ top: "40px" }}>
+        <Container>
+          <Paragraph>Something went wrong</Paragraph>
+        </Container>
+      </Box>
+    </Box>
   </React.Fragment>
 )
 

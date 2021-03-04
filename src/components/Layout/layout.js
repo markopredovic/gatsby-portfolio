@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-import React, { useState, useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Grommet } from "grommet"
 import { useStaticQuery, graphql } from "gatsby"
@@ -33,7 +33,7 @@ const variants = {
   },
 }
 
-const Layout = ({ children, location, bodyClass }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -44,27 +44,9 @@ const Layout = ({ children, location, bodyClass }) => {
     }
   `)
 
-  const [headerMode, setHeaderMode] = useState("")
-
-  const handleScroll = (evt) => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-
-    if (scrollTop > 10) {
-      setHeaderMode("l-dark")
-    } else setHeaderMode("")
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", () => {})
-    }
-  }, [])
-
   return (
     <Grommet>
-      <Header siteTitle={data.site.siteMetadata.title} mode={headerMode} />
+      <Header siteTitle={data.site.siteMetadata.title} />
       <AnimatePresence>
         <motion.main
           key={location ? location.pathname : ""}
@@ -72,7 +54,6 @@ const Layout = ({ children, location, bodyClass }) => {
           initial="initial"
           animate="enter"
           exit="exit"
-          className={bodyClass ? bodyClass : null}
         >
           {children}
         </motion.main>
