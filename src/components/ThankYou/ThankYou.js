@@ -1,11 +1,12 @@
 import React from "react"
+import { Box, Paragraph } from "grommet"
 
 const ThankYou = () => {
   return (
-    <div className="l-thank-you">
-      <p>Your message has been received.</p>
-      <p>I'll get back to you ASAP.</p>
-    </div>
+    <Box>
+      <Paragraph>Your message has been received.</Paragraph>
+      <Paragraph>I'll get back to you ASAP.</Paragraph>
+    </Box>
   )
 }
 

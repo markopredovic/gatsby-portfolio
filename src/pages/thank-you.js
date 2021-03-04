@@ -2,16 +2,24 @@ import React from "react"
 import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
-const PageTitle = loadable(() => import("../components/PageTitle"))
+import { Box } from "@material-ui/core"
+import Title from "../components/Modules/Title"
+import Container from "../components/UI/Container"
 const ThankYou = loadable(() => import("../components/ThankYou"))
 
 const SuccessPage = () => (
   <React.Fragment>
     <SEO title="Contact" />
-    <div className="l-main-content l-thank-you-page">
-      <PageTitle title="Thank You" />
-      <ThankYou />
-    </div>
+    <Box>
+      <Title page fill={true}>
+        Thank You
+      </Title>
+      <Box pad={{ top: "40px" }}>
+        <Container>
+          <ThankYou />
+        </Container>
+      </Box>
+    </Box>
   </React.Fragment>
 )
 
