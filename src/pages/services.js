@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import loadable from "@loadable/component"
-
+import styled from "styled-components"
 import SEO from "../components/seo"
-const PageTitle = loadable(() => import("../components/PageTitle"))
+import Title from "../components/Modules/Title"
+import {
+  Accordion,
+  AccordionPanel,
+  Box,
+  Tabs,
+  Tab,
+  ResponsiveContext,
+} from "grommet"
+import Container from "../components/UI/Container"
 
 const ServicesPage = () => {
   const data = useStaticQuery(graphql`
@@ -23,26 +31,61 @@ const ServicesPage = () => {
     }
   `)
 
+  const size = useContext(ResponsiveContext)
+  const isMobile = size === "small"
+
   const services = data.allContentfulService.edges
 
   return (
     <React.Fragment>
       <SEO title="Services" />
-      <div className="l-main-content l-services">
-        <PageTitle title="Services" />
-        <ul className="l-content">
-          {services.map((service, index) => (
-            <li key={service.node.id}>
-              <div className="m-service">
-                <h3>{service.node.title}</h3>
-                <p>{service.node.description.description}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Box>
+        <Title page fill={true}>
+          Services
+        </Title>
+        <Container>
+          {isMobile && (
+            <Accordion pad={{ top: "40px" }}>
+              {services.map((service) => (
+                <ServiceAccordionPanel
+                  key={service.node.id}
+                  label={service.node.title}
+                >
+                  <Box
+                    pad="20px 10px"
+                    dangerouslySetInnerHTML={{
+                      __html: service.node.description.description,
+                    }}
+                  />
+                </ServiceAccordionPanel>
+              ))}
+            </Accordion>
+          )}
+          {!isMobile && (
+            <Tabs pad={{ top: "40px" }}>
+              {services.map((service, index) => (
+                <Tab key={service.node.id} title={service.node.title}>
+                  <Box
+                    pad="20px 10px"
+                    dangerouslySetInnerHTML={{
+                      __html: service.node.description.description,
+                    }}
+                  />
+                </Tab>
+              ))}
+            </Tabs>
+          )}
+        </Container>
+      </Box>
     </React.Fragment>
   )
 }
 
 export default ServicesPage
+
+const ServiceAccordionPanel = styled(AccordionPanel)`
+  h4 {
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+`

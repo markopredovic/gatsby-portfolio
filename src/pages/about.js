@@ -2,17 +2,20 @@ import React from "react"
 import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
-const PageTitle = loadable(() => import("../components/PageTitle"))
+import Container from "../components/UI/Container"
+import Title from "../components/Modules/Title"
 const About = loadable(() => import("../components/About"))
 
 const AboutPage = () => {
   return (
     <React.Fragment>
       <SEO title="Services" />
-      <div className="l-main-content l-about">
-        <PageTitle title="About" />
+      <Title page fill={true}>
+        About
+      </Title>
+      <Container>
         <About />
-      </div>
+      </Container>
     </React.Fragment>
   )
 }

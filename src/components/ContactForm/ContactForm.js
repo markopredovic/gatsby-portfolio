@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./ContactForm.module.scss"
 import { navigate } from "gatsby"
+import { Box } from "grommet"
 
 const ContactForm = () => {
   const [name, setName] = useState("")
@@ -56,7 +57,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="l-contact-form">
+    <Box pad={{ top: "40px" }}>
       <div className={styles.contact_form}>
         <p className={styles.intro}>Send me email</p>
         <form
@@ -113,7 +114,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-    </div>
+    </Box>
   )
 }
 

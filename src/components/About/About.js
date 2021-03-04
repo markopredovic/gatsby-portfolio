@@ -1,8 +1,9 @@
+import { Box } from "grommet"
 import React from "react"
 
 const About = () => {
   return (
-    <div className="l-about-content">
+    <Box pad={{ top: "40px" }}>
       <h3>JAM technology stack</h3>
       <p>
         Website is built with <a href="https://www.gatsbyjs.org/">Gatsby Js</a>,{" "}
@@ -40,7 +41,7 @@ const About = () => {
           https://material-ui.com/components/use-media-query/#simple-media-query
         </li>
       </ul>
-    </div>
+    </Box>
   )
 }
 

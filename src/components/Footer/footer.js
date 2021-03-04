@@ -1,6 +1,5 @@
 import React from "react"
 import { Footer } from "grommet"
-import Container from "../UI/Container"
 import FooterMenu from "./FooterMenu"
 import FooterContact from "./FooterContact"
 import Copyright from "./Copyright"
