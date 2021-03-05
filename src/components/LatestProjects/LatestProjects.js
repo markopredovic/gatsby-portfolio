@@ -8,6 +8,7 @@ import {
   defaultProps,
   Heading,
   ResponsiveContext,
+  Anchor,
 } from "grommet"
 import Container from "../UI/Container"
 import Title from "../Modules/Title"
@@ -79,16 +80,16 @@ const LatestProjects = () => {
         <Img fluid={project.node.projectImage.fluid} />
       </ImageBox>
       <ContentBox>
-        <Link to={project.node.liveUrl}>
+        <Anchor href={project.node.liveUrl}>
           <Heading level="4">{project.node.title}</Heading>
-        </Link>
+        </Anchor>
         <span>{project.node.projectType}</span>
       </ContentBox>
     </PortfolioProjectBox>
   ))
 
   return (
-    <Box margin={{ bottom: "40px" }}>
+    <Box margin={{ bottom: "60px" }}>
       <Container>
         <Title section margin={{ bottom: "30px" }}>
           Latest Projects
@@ -120,7 +121,7 @@ export default LatestProjects
 const PortfolioProjectBox = styled(Box)`
   position: relative;
   padding: 10px;
-  border: 1px solid ${defaultProps.theme.global.colors["dark-6"]};
+  border: 1px solid ${defaultProps.theme.global.colors["light-6"]};
   border-radius: 4px;
 `
 
