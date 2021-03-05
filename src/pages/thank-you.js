@@ -2,7 +2,7 @@ import React from "react"
 import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
-import { Box } from "@material-ui/core"
+import { Box } from "grommet"
 import Title from "../components/Modules/Title"
 import Container from "../components/UI/Container"
 const ThankYou = loadable(() => import("../components/ThankYou"))

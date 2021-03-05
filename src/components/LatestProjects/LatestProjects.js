@@ -119,6 +119,9 @@ export default LatestProjects
 
 const PortfolioProjectBox = styled(Box)`
   position: relative;
+  padding: 10px;
+  border: 1px solid ${defaultProps.theme.global.colors["dark-6"]};
+  border-radius: 4px;
 `
 
 const ImageBox = styled(Box)`

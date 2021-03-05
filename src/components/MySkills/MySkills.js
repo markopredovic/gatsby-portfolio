@@ -58,7 +58,7 @@ const MySkills = () => {
           My skills
         </Title>
       </Container>
-      <SkillsBox background="brand" pad={{ vertical: "20px" }}>
+      <SkillsBox background="brand" pad={{ vertical: "40px" }}>
         <Container>
           {size === "small" ? (
             <Accordion>{mySkillsDataContent}</Accordion>

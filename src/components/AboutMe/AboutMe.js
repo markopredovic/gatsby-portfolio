@@ -18,7 +18,7 @@ const AboutMe = () => {
             many clients on a diverse set of projects, gaining valuable
             knowledge along the way. I go an 'extra mile' to ensure success of
             each project and timely delivery. I value and invest into long term
-            professional relationship.{" "}
+            professional relationship.
           </Paragraph>
           <Paragraph fill={true}>
             After things start to go in the right direction and friendly rapport

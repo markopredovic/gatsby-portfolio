@@ -1,3 +1,6 @@
+/* ---------------------------
+    base:
+-----------------------------*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -618,5 +621,83 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+h5 {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.l-container {
+  padding: 0 10px;
+}
+.l-hide-desktop {
+  display: block;
+}
+.l-hide-mobile {
+  display: block;
+}
+
+main {
+  padding: 60px 0;
+  min-height: 80vh;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 70px 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+  h3 {
+    font-size: 2.8rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+  a {
+    font-size: 1.8rem;
+  }
+  main {
+    padding: 80px 0;
   }
 }

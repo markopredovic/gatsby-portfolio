@@ -87,7 +87,7 @@ const TestimonialsBox = styled(Box)`
 `
 
 const TestimonialBox = styled(Box)`
-  padding: 20px 20px 40px;
+  padding: 40px 20px;
   p {
     max-width: 100%;
   }

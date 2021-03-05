@@ -6,7 +6,7 @@
 
 import React from "react"
 import Layout from "./src/components/Layout/layout"
-import "./src/styles/styles.scss"
+import "./src/styles/styles.css"
 
 export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
