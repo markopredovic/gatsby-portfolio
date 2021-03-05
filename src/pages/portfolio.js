@@ -1,11 +1,8 @@
 import React from "react"
-import loadable from "@loadable/component"
 import SEO from "../components/seo"
-
 import Title from "../components/Modules/Title"
 import { Box } from "grommet"
-
-const Portfolio = loadable(() => import("../components/Portfolio/Portfolio"))
+import Portfolio from "../components/Portfolio/Portfolio"
 
 const PortfolioPage = () => (
   <React.Fragment>

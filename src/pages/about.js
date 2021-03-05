@@ -1,10 +1,8 @@
 import React from "react"
-import loadable from "@loadable/component"
-
 import SEO from "../components/seo"
 import Container from "../components/UI/Container"
 import Title from "../components/Modules/Title"
-const About = loadable(() => import("../components/About"))
+import About from "../components/About"
 
 const AboutPage = () => {
   return (

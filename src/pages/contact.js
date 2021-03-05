@@ -1,11 +1,10 @@
 import React from "react"
-import loadable from "@loadable/component"
 
 import SEO from "../components/seo"
 import { Box } from "grommet"
 import Title from "../components/Modules/Title"
 import Container from "../components/UI/Container"
-const ContactForm = loadable(() => import("../components/ContactForm"))
+import ContactForm from "../components/ContactForm"
 
 const ContactPage = () => (
   <React.Fragment>
