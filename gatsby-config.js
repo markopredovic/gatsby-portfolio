@@ -27,7 +27,6 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
