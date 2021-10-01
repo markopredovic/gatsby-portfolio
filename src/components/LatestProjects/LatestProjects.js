@@ -126,9 +126,13 @@ const PortfolioProjectBox = styled(Box)`
 `
 
 const ImageBox = styled(Box)`
-  height: auto;
+  height: 300px;
   .gatsby-image-wrapper {
     height: 100%;
+  }
+
+  @media only screen and (min-width: 992px) {
+    height: auto;
   }
 `
 
