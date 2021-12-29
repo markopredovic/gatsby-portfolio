@@ -60,8 +60,6 @@ const Portfolio = () => {
     return acc
   }, initialTabs)
 
-  console.log("projects", projects)
-
   const projectTypeInfo = {
     all: "All projects",
     shopify: "Shopify projects",
