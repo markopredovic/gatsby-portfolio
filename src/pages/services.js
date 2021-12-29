@@ -51,12 +51,9 @@ const ServicesPage = () => {
                   key={service.node.id}
                   label={service.node.title}
                 >
-                  <Box
-                    pad="20px 10px"
-                    dangerouslySetInnerHTML={{
-                      __html: service.node.description.description,
-                    }}
-                  />
+                  <Box pad="20px 10px">
+                    <p>{service.node.description.description}</p>
+                  </Box>
                 </ServiceAccordionPanel>
               ))}
             </Accordion>
@@ -65,12 +62,9 @@ const ServicesPage = () => {
             <Tabs pad={{ top: "40px" }}>
               {services.map((service, index) => (
                 <Tab key={service.node.id} title={service.node.title}>
-                  <Box
-                    pad="20px 10px"
-                    dangerouslySetInnerHTML={{
-                      __html: service.node.description.description,
-                    }}
-                  />
+                  <Box pad="20px 10px">
+                    <p>{service.node.description.description}</p>
+                  </Box>
                 </Tab>
               ))}
             </Tabs>

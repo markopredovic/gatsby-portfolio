@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import Img from "gatsby-image"
 import styled from "styled-components"
 import { Box, Carousel, Paragraph, Heading, ResponsiveContext } from "grommet"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
@@ -11,17 +11,13 @@ const Banner = () => {
         edges {
           node {
             title
+            description
             desktopImage {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             }
             mobileImage {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             }
-            description
           }
         }
       }
@@ -32,17 +28,17 @@ const Banner = () => {
   const isMobile = size === "small"
 
   const banners = data.allContentfulBannerSlider.edges.map((banner, index) => {
-    const sources = [
-      banner.node.mobileImage.fluid,
-      {
-        ...banner.node.desktopImage.fluid,
-        media: `(min-width: 768px)`,
-      },
-    ]
+    const desktopImage = getImage(banner.node.desktopImage)
+    const mobileImage = getImage(banner.node.mobileImage)
+
     return (
       <BannerBox key={index}>
         <ImageBox>
-          <Img fluid={sources} />
+          {isMobile ? (
+            <GatsbyImage image={mobileImage} alt={banner.node.title} />
+          ) : (
+            <GatsbyImage image={desktopImage} alt={banner.node.title} />
+          )}
         </ImageBox>
         <ContentBox>
           <Box>

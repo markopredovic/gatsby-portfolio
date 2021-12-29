@@ -1,39 +1,54 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import { BLOCKS } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { Box, defaultProps, Heading } from "grommet"
 import Container from "../components/UI/Container"
 import { Return } from "grommet-icons"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       subtitle
-      featuredImage {
-        fluid(quality: 9) {
-          ...GatsbyContentfulFluid
-        }
-      }
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
-        json
+        raw
+        references {
+          contentful_id
+          ... on ContentfulAsset {
+            contentful_id
+            gatsbyImageData
+            __typename
+          }
+        }
+      }
+      featuredImage {
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }
 `
 
 const blog = (props) => {
-  const options = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const alt = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
+  const Bold = ({ children }) => <span className="bold">{children}</span>
+  const Text = ({ children }) => <p className="align-center">{children}</p>
 
-        return <img alt={alt} src={url} />
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { gatsbyImageData } = node.data.target
+        if (!gatsbyImageData) {
+          // asset is not an image
+          return null
+        }
+        return <GatsbyImage image={gatsbyImageData} />
       },
     },
   }
@@ -50,16 +65,13 @@ const blog = (props) => {
       </TitleBox>
       <Container>
         <ImageBox>
-          <Img
-            fluid={props.data.contentfulBlogPost.featuredImage.fluid}
+          <GatsbyImage
+            image={getImage(props.data.contentfulBlogPost.featuredImage)}
             alt={props.data.contentfulBlogPost.title}
           />
         </ImageBox>
         <ContentBox>
-          {documentToReactComponents(
-            props.data.contentfulBlogPost.body.json,
-            options
-          )}
+          {renderRichText(props.data.contentfulBlogPost.body, options)}
         </ContentBox>
         <BackBox>
           <Link to="/blog">

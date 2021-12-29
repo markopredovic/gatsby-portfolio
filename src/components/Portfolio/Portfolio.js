@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import {
@@ -12,6 +11,7 @@ import {
   defaultProps,
 } from "grommet"
 import Container from "../UI/Container"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
@@ -26,9 +26,7 @@ const Portfolio = () => {
               description
             }
             projectImage {
-              fluid(quality: 9) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -39,12 +37,20 @@ const Portfolio = () => {
   const size = useContext(ResponsiveContext)
   const isMobile = size === "small"
 
-  let initialTabs = { all: [], magento: [], reactJs: [], other: [] }
+  let initialTabs = {
+    all: [],
+    shopify: [],
+    magento: [],
+    reactJs: [],
+    other: [],
+  }
 
   const projects = data.allContentfulPortfolio.edges.reduce((acc, current) => {
     acc["all"].push(current.node)
     if (current.node.projectType === "Magento") {
       acc["magento"].push(current.node)
+    } else if (current.node.projectType === "Shopify") {
+      acc["shopify"].push(current.node)
     } else if (current.node.projectType === "React js") {
       acc["reactJs"].push(current.node)
     } else {
@@ -58,6 +64,7 @@ const Portfolio = () => {
 
   const projectTypeInfo = {
     all: "All projects",
+    shopify: "Shopify projects",
     magento: "Magento projects",
     reactJs: "Open source React js projects",
     other:
@@ -77,8 +84,8 @@ const Portfolio = () => {
                 {projects[type].map((project, index) => (
                   <ProjectBox key={index}>
                     <ImageBox className="l-img">
-                      <Img
-                        fluid={project.projectImage.fluid}
+                      <GatsbyImage
+                        image={getImage(project.projectImage)}
                         alt={project.title}
                       />
                     </ImageBox>
@@ -88,7 +95,7 @@ const Portfolio = () => {
                       </Heading>
                       <span className="type-tag">{project.projectType}</span>
                       {!isMobile && (
-                        <Box
+                        <div
                           dangerouslySetInnerHTML={{
                             __html: project.description.description,
                           }}

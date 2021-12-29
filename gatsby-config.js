@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        whitelist: ["CONTENTFUL_SPACE_ID", "CONTENTFUL_ACCESS_TOKEN"],
+        allowList: ["CONTENTFUL_SPACE_ID", "CONTENTFUL_ACCESS_TOKEN"],
       },
     },
     {
@@ -40,6 +40,7 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "./ContactForm.module.css"
+import * as styles from "./ContactForm.module.css"
 import { navigate } from "gatsby"
 import { Box } from "grommet"
 

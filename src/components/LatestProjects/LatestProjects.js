@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import {
   Box,
   Grid,
@@ -13,6 +12,7 @@ import {
 import Container from "../UI/Container"
 import Title from "../Modules/Title"
 import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const LatestProjects = () => {
   const size = useContext(ResponsiveContext)
@@ -34,12 +34,7 @@ const LatestProjects = () => {
               description
             }
             projectImage {
-              file {
-                url
-              }
-              fluid(quality: 9) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -57,12 +52,7 @@ const LatestProjects = () => {
               description
             }
             projectImage {
-              file {
-                url
-              }
-              fluid(quality: 9) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -77,7 +67,7 @@ const LatestProjects = () => {
   projects = projects.edges.map((project, index) => (
     <PortfolioProjectBox key={index}>
       <ImageBox>
-        <Img fluid={project.node.projectImage.fluid} />
+        <GatsbyImage image={getImage(project.node.projectImage)} />
       </ImageBox>
       <ContentBox>
         <Anchor href={project.node.liveUrl}>

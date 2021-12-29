@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import Img from "gatsby-image"
 import Title from "../components/Modules/Title"
 import { Box, defaultProps } from "grommet"
 import Container from "../components/UI/Container"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -16,9 +16,7 @@ const Blog = () => {
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
             featuredImage {
-              fluid(quality: 9) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -41,8 +39,8 @@ const Blog = () => {
                 <PostItemBox>
                   <ImageBox>
                     <Link to={`/blog/${post.node.slug}`}>
-                      <Img
-                        fluid={post.node.featuredImage.fluid}
+                      <GatsbyImage
+                        image={getImage(post.node.featuredImage)}
                         alt={post.node.title}
                       />
                     </Link>
