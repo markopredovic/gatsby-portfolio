@@ -1069,24 +1069,10 @@
   dependencies:
     "@contentful/rich-text-types" "^14.1.2"
 
-"@contentful/rich-text-react-renderer@^15.11.0":
-  "integrity" "sha512-H286WG5geE7yGmB+ILS6pxHzb/fm21dc9q0Io4ybZMrv8fiKRLcjBXu64JuvmXFywnvKR9vQXH7ss362s+P+yA=="
-  "resolved" "https://registry.npmjs.org/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.11.0.tgz"
-  "version" "15.11.0"
-  dependencies:
-    "@contentful/rich-text-types" "^15.11.0"
-
 "@contentful/rich-text-types@^14.1.2":
   "integrity" "sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ=="
   "resolved" "https://registry.npmjs.org/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz"
   "version" "14.1.2"
-
-"@contentful/rich-text-types@^15.11.0":
-  "integrity" "sha512-1xVu5RCPfayA/QIoluhQfQwViyKVrmFqh/ue2JhMknaA4AD3QAfhuxvf2TKDaLXU1qS72sBPmVRU7po1GSl/6A=="
-  "resolved" "https://registry.npmjs.org/@contentful/rich-text-types/-/rich-text-types-15.11.0.tgz"
-  "version" "15.11.0"
-  dependencies:
-    "ajv" "^8.8.2"
 
 "@emotion/is-prop-valid@^0.8.2", "@emotion/is-prop-valid@^0.8.8":
   "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
@@ -2301,16 +2287,6 @@
     "uri-js" "^4.2.2"
 
 "ajv@^8.0.1":
-  "integrity" "sha512-x9VuX+R/jcFj1DHo/fCp99esgGDWiHENrKxaCENuCxpoMCmAt/COCGVDwA7kleEpEzJjDnvh3yGoOuLu0Dtllw=="
-  "resolved" "https://registry.npmjs.org/ajv/-/ajv-8.8.2.tgz"
-  "version" "8.8.2"
-  dependencies:
-    "fast-deep-equal" "^3.1.1"
-    "json-schema-traverse" "^1.0.0"
-    "require-from-string" "^2.0.2"
-    "uri-js" "^4.2.2"
-
-"ajv@^8.8.2":
   "integrity" "sha512-x9VuX+R/jcFj1DHo/fCp99esgGDWiHENrKxaCENuCxpoMCmAt/COCGVDwA7kleEpEzJjDnvh3yGoOuLu0Dtllw=="
   "resolved" "https://registry.npmjs.org/ajv/-/ajv-8.8.2.tgz"
   "version" "8.8.2"
