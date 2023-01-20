@@ -135,6 +135,7 @@ const Logo = styled(Heading)`
   }
 
   @media (min-width: 770px) {
+    display: flex;
     margin-right: auto;
     a {
       font-size: 3.6rem;
