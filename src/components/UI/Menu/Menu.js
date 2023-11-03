@@ -26,8 +26,8 @@ const SiteMenu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/contact" activeClassName="is-active-link">
-            Contact
+          <Link to="/cv" activeClassName="is-active-link">
+            CV
           </Link>
         </li>
         <li>
